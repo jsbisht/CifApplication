@@ -1,0 +1,25 @@
+{
+  "name": "cif",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsbisht/CifApplication.git"
+  },
+  "keywords": [
+    "cif"
+  ],
+  "author": "prowareness",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsbisht/CifApplication/issues"
+  },
+  "homepage": "https://github.com/jsbisht/CifApplication#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
