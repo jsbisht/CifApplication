@@ -1,10 +1,96 @@
 ﻿<div class="row">
+    <h5 class="center">Address Details</h5>
     <div class="col s12">
-        <div class="row">
-            <img src="../../assets/images/profile.png" class="profileImage centerDiv" />
-        </div>
         <form>
-            
+            <div class="row col s12">
+                <h5 class="center">Current Residing Address (In Detail)</h5>    
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="address.current.addressLine1" required>
+                        <label>Address Line 1</label>
+                    </div> 
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="address.current.addressLine2" required>
+                        <label>Address Line 2</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="address.current.addressLine3" required>
+                        <label>Address Line 3</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="address.current.addressLine4" required>
+                        <label>Address Line 4</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="address.current.cityName" required>
+                        <label>City</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="address.current.stateName" required>
+                        <label>State</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="number" class="validate" ng-model="address.current.pinCode" required>
+                        <label>Pin Code</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="address.current.addressLine4" required>
+                        <label>Landmark</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="address.current.addressLine4" required>
+                        <label>Duration of Stay</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="address.current.addressLine4" required>
+                        <label>Telephone</label>
+                    </div>
+                </div>
+
+                <h5 class="center">Permanent/Native Address (In Detail)</h5>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="address.permanent.addressLine1" required>
+                        <label>Address Line 1</label>
+                    </div> 
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="address.permanent.addressLine2" required>
+                        <label>Address Line 2</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="address.permanent.addressLine3" required>
+                        <label>Address Line 3</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="address.permanent.addressLine4" required>
+                        <label>Address Line 4</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="address.permanent.cityName" required>
+                        <label>City</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="address.permanent.stateName" required>
+                        <label>State</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="number" class="validate" ng-model="address.permanent.pinCode" required>
+                        <label>Pin Code</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="address.permanent.addressLine4" required>
+                        <label>Landmark</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="address.permanent.addressLine4" required>
+                        <label>Duration of Stay</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="address.permanent.addressLine4" required>
+                        <label>Telephone</label>
+                    </div>
+                </div>
+            </div>
             <div class="row col s12">
                 <a href="/#/address" class="btn navButton centerDiv blue">Next</a>
             </div>
