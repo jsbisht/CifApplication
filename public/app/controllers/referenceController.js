@@ -1,4 +1,4 @@
-﻿var addressController=candidateInformation.controller("addressController", function ($scope) {
+﻿var referenceController = candidateInformation.controller("referenceController", function ($scope) {
     $scope.candidate = {};
     angular.copy(cifService.candidate, $scope.candidate);
     $scope.submitForm = function () {

@@ -1,13 +1,14 @@
 ﻿var employmentController = candidateInformation.controller("employmentController", ['$scope', 'cifService', '$state', function ($scope, cifService, $state) {
     $scope.candidate = {};
     angular.copy(cifService.candidate, $scope.candidate);
-    $scope.candidate.employmentDetails = [{}];
-    $scope.addEmployment = function () {
-        $scope.candidate.employmentDetails.push({
-            "name": "",
-            "DOB": ""
-        });
+    if (angular.isUndefined($scope.candidate.employmentDetails)) {
+        $scope.candidate.employmentDetails = {};
+        $scope.candidate.employmentDetails.employers = [{}]
+    }
+    $scope.addEmployer = function () {
+        $scope.candidate.employmentDetails.push({});
         angular.element(function () {
+            $('select').material_select();
             initializeDatepicker();
         })
 
