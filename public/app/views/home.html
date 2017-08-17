@@ -1,25 +1,27 @@
 ﻿<div class="row">
+    <h4 class=" center">Prowareness Software Services Pvt. Ltd. </h4>
+    <h3 class=" center">CANDIDATE INFORMATION FORM (CIF) 
+</h3>
     <div class="col s12">
         <div class="row">
-            <img src="../../assets/images/profile.png" class="profileImage centerDiv" />
+            <img src="../assets/images/profile.png" class="profileImage centerContent" />
         </div>
         <form>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="first_name" type="text" class="validate">
-                    <label for="first_name">Employee Name</label>
+                    <input id="name" type="text" class="validate" ng-model="candidate.name">
+                    <label for="name">Employee Name</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Employee ID</label>
+                    <input id="empId" type="text" class="validate" ng-model="candidate.empId">
+                    <label for="empId">Employee ID</label>
                 </div>
             </div>
             <div class="row col s12">
-                <a ui-sref="address" class="btn navButton centerDiv blue">Next</a>
+                <a ui-sref="navigation" class="btn navButton centerContent blue">Next</a>
             </div>
         </form>
     </div>
-
 </div>

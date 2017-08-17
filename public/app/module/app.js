@@ -1,17 +1,38 @@
 ﻿var candidateInformation = angular.module("candidateInformation", ['ui.router']);
 
-candidateInformation.config(function($stateProvider, $urlRouterProvider) {
-    
+candidateInformation.config(function ($stateProvider, $urlRouterProvider) {
+
     $urlRouterProvider.otherwise('/');
-    
+
     $stateProvider
         .state('home', {
             url: '/',
-            templateUrl: '/app/views/home.html'
+            templateUrl: 'app/views/home.html',
+            controller: 'homeController'
         })
         .state('address', {
             url: '/address',
-            templateUrl: '/app/views/address.html'
+            templateUrl: 'app/views/address.html',
+            controller: 'addressController'
+        }).
+        state('personal', {
+            url: '/personal',
+            templateUrl: 'app/views/personal.html',
+            controller: 'personalController'
+        }).
+        state('navigation', {
+            url: '/navigation',
+            templateUrl: 'app/views/navigation.html',
+            controller: 'navigationController'
+        }).
+        state('employment', {
+            url: '/employment',
+            templateUrl: 'app/views/employment.html',
+            controller: 'employmentController'
         })
-         
+
 });
+
+candidateInformation.service('cifService', function () {
+    this.candidate = {};
+})

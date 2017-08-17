@@ -1,3 +1,3 @@
-﻿var homeController=candidateInformation.controller("homeController", function ($scope) {
-    $scope.name="Some Name"
-})
+﻿var homeController = candidateInformation.controller("homeController", ['$scope', 'cifService', function ($scope, cifService) {
+    $scope.candidate = cifService.candidate;
+}])

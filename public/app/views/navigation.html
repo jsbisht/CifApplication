@@ -1,0 +1,8 @@
+﻿<div class="collection">
+    <a ui-sref="{{anchor}}" class="collection-item flow-text center card" ng-repeat="anchor in navigations" ng-class="{'light-green accent-4 white-text':candidate[anchor+'Details']}">
+        {{anchor | uppercase}} DETAILS
+    </a>
+</div>
+<div class="">
+    <a ui-sref="summary" class="btn navButton centerContent blue">Final Submit</a>
+</div>
