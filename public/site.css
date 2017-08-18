@@ -48,5 +48,8 @@ body
     border:1px solid #e0e0e0 !important;
     border-radius:10px;
     font-weight: bold;
-
+}
+h6
+{
+    font-weight:bold;
 }

@@ -31,7 +31,7 @@ candidateInformation.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'employmentController'
         }).
         state('reference', {
-            url: '/employment',
+            url: '/reference',
             templateUrl: 'app/views/reference.html',
             controller: 'referenceController'
         })
