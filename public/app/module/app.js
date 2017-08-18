@@ -53,6 +53,10 @@ candidateInformation.config(function ($stateProvider, $urlRouterProvider) {
 
 });
 
-candidateInformation.service('cifService', function () {
+candidateInformation.service('cifService', function ($http) {
     this.candidate = {};
+    this.saveDetails = function () {
+        return $http.post('/db/save', { 'dummy': 'data' });
+            
+    }
 })

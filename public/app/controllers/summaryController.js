@@ -9,37 +9,40 @@
               background: '#fff'
           };
         document.body.appendChild(canvasObj); //appendChild is required for html to add page in pdf
-        
-        pdf.addHTML($(".container"), function () {
-            pdf.addPage();
-            for (var i = 0; i < $("form").length; i++) {
-                debugger
-                pdf.addHTML($("form").get(i), function () {
-                    $("button").attr("data-html2canvas-ignore", true);
-                });
-            }
-               
-            pdf.save("cif.pdf");
+        pdf.addHTML(canvasObj, 0, 0, pdfConf, function () {
+            document.body.removeChild(canvasObj);
+            //pdf.addPage();
+            pdf.save(fileName + '.pdf');
+            $(".container").css({ "width": "70%", "margin": "auto", "max-width": "1280px" });
+            //$("button").attr("data-html2canvas-ignore", true);
+            //callback();
         });
-       
     }
     $scope.exportAsPdf = function () {
-        //window.print();
-        var pdf = new jsPDF('p', 'pt', 'letter');
-        pdf.addHTML($('body').get(0), 15, 15,{},function (dispose) {
-            pdf.save('Test.pdf');
-        });
-        ////$(".container").css({ "width": "100%", "margin": "0", "max-width": "100%", "padding": "20px" });
-        //html2canvas($(".container"),{
-        //    useCORS: true,
-        //    //allowTaint:true,
-        //    onrendered: function (canvas) {
-        //        theCanvas = canvas;
-        //        document.body.appendChild(canvas);
-        //        startPrintProcess(canvas, 'CIF');
+        window.print();
+        ////var pdf = new jsPDF('p', 'pt', 'letter');
+        ////pdf.addHTML($('body').get(0), 15, 15,{},function (dispose) {
+        ////    pdf.save('Test.pdf');
+        ////});
+        $(".container").css({ "width": "595px", "margin": "0"});
+        html2canvas($(".container"),{
+            useCORS: true,
+            //allowTaint:true,
+            onrendered: function (canvas) {
+                theCanvas = canvas;
+                $(".container").css({ "width": "595px", "margin": "0","padding": "20px" });
+                document.body.appendChild(canvas);
+                startPrintProcess(canvas, 'CIF');
                 
-        //    }
-        //});
+            }
+        });
+        //var pdf = new jsPDF('p', 'pt', 'letter');
+        ////pdf.canvas.height = 72 * 11;
+        ////pdf.canvas.width = 595;
+
+        //pdf.fromHTML($(".container").html());
+
+        //pdf.save('test.pdf');
     }
 
 
@@ -47,7 +50,8 @@
         angular.element(function () {
             $('select').material_select();
             //initializeDatepicker();
-            $("button").hide();
+            $("button").remove();
+            $("input").prop("disabled", "disabled");
         });
     });
     

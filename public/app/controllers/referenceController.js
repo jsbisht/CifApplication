@@ -10,5 +10,6 @@
         cifService.candidate = $scope.candidate;
         $state.go('navigation');
     }
+   
 
 }])
