@@ -1,0 +1,182 @@
+<div class="row">
+  <h5 class="center">Education Details</h5>
+  <div class="col s12">
+      <form class="row" ng-submit="submitForm()">
+        <h5 class="eduHeader">10th</h5>
+          <div class="col s12 row">
+              <div class="col s12 m4 l4">
+                  <div class="input-field ">
+                      <input id="middleName" type="text" class="validate" ng-model="candidate.10th.schoolName">
+                      <label for="middleName" ng-class="{'active':candidate.personalDetails.middleName}">School/College & City </label>
+                  </div>
+              </div>
+              <div class="col s12 m4 l4">
+                  <div class="input-field ">
+                      <input id="middleName" type="text" class="validate" ng-model="candidate.10th.board">
+                      <label for="middleName" ng-class="{'active':candidate.personalDetails.middleName}">University/Board & City</label>
+                  </div>
+              </div>
+              <div class="col s12 m4 l4">
+                  <div class="input-field">
+                      <input id="lastName" type="text" class="validate" ng-model="candidate.10th.regNo" required>
+                      <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Student Id /Reg No.</label>
+                  </div>
+              </div>
+              <div class="col s12 m4 l4">
+                  <div class="input-field">
+                      <input id="lastName" type="text" class="validate" ng-model="candidate.10th.duration" required>
+                      <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Qualification (From-To) yyyy</label>
+                  </div>
+              </div>
+              <div class="col s12 m4 l4">
+                  <div class="input-field">
+                      <input id="lastName" type="text" class="validate" ng-model="candidate.10th.yearOfPassing" required>
+                      <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Year of Passing</label>
+                  </div>
+              </div>
+              <div class="col s12 m4 l4">
+                  <div class="input-field">
+                      <input id="lastName" type="text" class="validate" ng-model="candidate.10th.Percentage" required>
+                      <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Average % of Marks/CGPA</label>
+                  </div>
+              </div>
+          </div>
+
+          <h5 class="eduHeader">12th</h5>
+          <div class="col s12 row">
+            <div class="col s12 m4 l4">
+                <div class="input-field ">
+                    <input id="middleName" type="text" class="validate" ng-model="candidate.12th.schoolName">
+                    <label for="middleName" ng-class="{'active':candidate.personalDetails.middleName}">School/College & City </label>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="input-field ">
+                    <input id="middleName" type="text" class="validate" ng-model="candidate.12th.board">
+                    <label for="middleName" ng-class="{'active':candidate.personalDetails.middleName}">University/Board & City</label>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="input-field">
+                    <input id="lastName" type="text" class="validate" ng-model="candidate.12th.regNo" required>
+                    <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Student Id /Reg No.</label>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="input-field">
+                    <input id="lastName" type="text" class="validate" ng-model="candidate.12th.duration" required>
+                    <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Qualification (From-To) yyyy</label>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="input-field">
+                    <input id="lastName" type="text" class="validate" ng-model="candidate.12th.yearOfPassing" required>
+                    <label for="lastName" ng-class="{'active':candidate.personalDetails.yearOfPassing}">Year of Passing</label>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="input-field">
+                    <input id="lastName" type="text" class="validate" ng-model="candidate.12th.Percentage" required>
+                    <label for="lastName" ng-class="{'active':candidate.personalDetails.Percentage}">Average % of Marks/CGPA</label>
+                </div>
+            </div>
+        </div>
+
+          <h5 class="eduHeader">Graduation Program Name</h5>
+          <div class="col s12 row">
+              <div class="col s12 m4 l4">
+                  <div class="input-field ">
+                      <input id="graduateCollege" type="text" class="validate" ng-model="candidate.graduation.college">
+                      <label for="graduateCollege" ng-class="{'active':candidate.graduation.college}">Institution/College & City</label>
+                  </div>
+              </div>
+              <div class="col s12 m4 l4">
+                  <div class="input-field ">
+                      <input id="graduateBoard" type="text" class="validate" ng-model="candidate.graduation.board">
+                      <label for="graduateBoard" ng-class="{'active':candidate.graduation.board}">University/Board & City</label>
+                  </div>
+              </div>
+              <div class="col s12 m4 l4">
+                  <div class="input-field">
+                      <input id="graduateRegNo" type="text" class="validate" ng-model="candidate.graduation.regNo" required>
+                      <label for="graduateRegNo" ng-class="{'active':candidate.graduation.regNo}">Student Id /Reg No.</label>
+                  </div>
+              </div>
+              <div class="col s12 m4 l4">
+                  <div class="input-field">
+                      <input id="graduateDuration" type="text" class="validate" ng-model="candidate.graduation.duration" required>
+                      <label for="graduateDuration" ng-class="{'active':candidate.graduation.duration}">Qualification (From-To) yyyy</label>
+                  </div>
+              </div>
+              <div class="col s12 m4 l4">
+                  <div class="input-field">
+                      <input id="graduateYearOfPassing" type="text" class="validate" ng-model="candidate.graduation.yearOfPassing" required>
+                      <label for="graduateYearOfPassing" ng-class="{'active':candidate.graduation.yearOfPassing}">Year of Passing</label>
+                  </div>
+              </div>
+              <div class="col s12 m4 l4">
+                  <div class="input-field">
+                      <input id="graduatePercentage" type="text" class="validate" ng-model="candidate.graduation.Percentage" required>
+                      <label for="graduatePercentage" ng-class="{'active':candidate.graduation.Percentage}">Average % of Marks/CGPA</label>
+                  </div>
+              </div>
+          </div>
+
+          <h5 class="eduHeader">Post Graduation Program Name</h5>
+          <div class="col s12 row">
+              <div class="col s12 m4 l4">
+                  <div class="input-field ">
+                      <input id="pgCollege" type="text" class="validate" ng-model="candidate.postGraduation.college">
+                      <label for="pgCollege" ng-class="{'active':candidate.postGraduation.college}">Institution/College & City</label>
+                  </div>
+              </div>
+              <div class="col s12 m4 l4">
+                  <div class="input-field ">
+                      <input id="pgBoard" type="text" class="validate" ng-model="candidate.postGraduation.board">
+                      <label for="pgBoard" ng-class="{'active':candidate.postGraduation.board}">University/Board & City</label>
+                  </div>
+              </div>
+              <div class="col s12 m4 l4">
+                  <div class="input-field">
+                      <input id="pgRegNo" type="text" class="validate" ng-model="candidate.postGraduation.regNo" required>
+                      <label for="pgRegNo" ng-class="{'active':candidate.postGraduation.regNo}">Student Id /Reg No.</label>
+                  </div>
+              </div>
+              <div class="col s12 m4 l4">
+                  <div class="input-field">
+                      <input id="pgDuration" type="text" class="validate" ng-model="candidate.postGraduation.duration" required>
+                      <label for="pgDuration" ng-class="{'active':candidate.postGraduation.duration}">Qualification (From-To) yyyy</label>
+                  </div>
+              </div>
+              <div class="col s12 m4 l4">
+                  <div class="input-field">
+                      <input id="pgYearOfPassing" type="text" class="validate" ng-model="candidate.postGraduation.yearOfPassing" required>
+                      <label for="pgYearOfPassing" ng-class="{'active':candidate.postGraduation.yearOfPassing}">Year of Passing</label>
+                  </div>
+              </div>
+              <div class="col s12 m4 l4">
+                  <div class="input-field">
+                      <input id="pgPercentage" type="text" class="validate" ng-model="candidate.postGraduation.percentage" required>
+                      <label for="pgPercentage" ng-class="{'active':candidate.postGraduation.percentage}">Average % of Marks/CGPA</label>
+                  </div>
+              </div>
+          </div>
+
+          <br>
+          <br>
+
+          <div class="col s12 row">
+              <div class="input-field">
+                  <input id="eduGapReason" type="text" class="validate" ng-model="candidate.personalDetails.eduGapReason" required>
+                  <label for="eduGapReason" ng-class="{'active':candidate.personalDetails.eduGapReason}">State reasons for gap in education (if any):</label>
+              </div>
+
+              <div class="col s12">
+                  <button type="submit" class="btn blue right">Save Details</button>
+              </div>
+          </div>
+
+
+      </form>
+  </div>
+</div>

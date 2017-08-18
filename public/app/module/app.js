@@ -30,6 +30,16 @@ candidateInformation.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'app/views/employment.html',
             controller: 'employmentController'
         }).
+        state('education', {
+            url: '/education',
+            templateUrl: 'app/views/education.html',
+            controller: 'educationController'
+        }).
+        state('emergency', {
+            url: '/emergency',
+            templateUrl: 'app/views/emergency.html',
+            controller: 'emergencyController'
+        }).
         state('reference', {
             url: '/reference',
             templateUrl: 'app/views/reference.html',
