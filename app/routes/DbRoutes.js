@@ -31,7 +31,13 @@ router.use(function timeLog(req, res, next) {
 router.post('/save', function (req, res) {
   dbActions.insertAll(req, res, dbObj);
 });
+router.get('/get',function (req, res) {
+  dbActions.fetchAll(req, res, dbObj);
+  
+});
 
-
+router.get('/get/:cid',function (req, res) {
+  dbActions.fetchById(req, res, dbObj);
+ });
 
 module.exports = router;

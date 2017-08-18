@@ -22,6 +22,41 @@ Candidate.prototype.insert = function (req, res, dbObj) {
     });
 }
 
+Candidate.prototype.fetch = function (req, res, dbObj) {
+
+    res.setHeader('Content-Type', 'application/json');
+    
+    var result = dbObj.query('SELECT * FROM candidate',function(err, rows, fields){
+      if (!err) {
+        console.log('The result is ', rows);
+      } else {
+        console.log('No results.');
+      }
+    
+    res.send(JSON.stringify(rows));
+    });
+}
+
+Candidate.prototype.fetchById = function (req, res, dbObj) {
+
+    res.setHeader('Content-Type', 'application/json');
+    console.log(' req.query.cid ',  req.params.cid);
+    var args = {cid :req.query.cid}
+    var result = dbObj.query('SELECT * FROM candidate where EMPLOYEEID = '+  req.params.cid , 
+    function(err, rows, fields){
+      if (!err) {
+        console.log(' req.query.cid ',  req.params.cid);
+        console.log('The result is ', rows);
+         
+      } else {
+        console.log('No results.');
+      }
+  
+    res.send(JSON.stringify(rows));
+  })
+}
+
+
 
 var candidate = new Candidate();
 
