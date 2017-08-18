@@ -1,7 +1,10 @@
 const express = require('express')
 const app = express();
-
+const bodyParser = require('body-parser');
 var dbRoutes = require('./app/routes/DbRoutes.js');
+
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 app.use('/db', dbRoutes);
 
