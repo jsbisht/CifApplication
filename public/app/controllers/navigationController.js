@@ -10,7 +10,7 @@
             $state.go("summary");
             console.log(response);
         }, function (error) {
-            // pass the error the the error service
+            // log the error 
             console.log(error);
         });
     }

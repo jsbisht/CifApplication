@@ -1,7 +1,7 @@
 ﻿var summaryController = candidateInformation.controller("summaryController", ['$scope', 'cifService', function ($scope, cifService) {
     $scope.candidate = {};
     angular.copy(cifService.candidate, $scope.candidate);
- 
+    console.log($scope.candidate);
     function startPrintProcess(canvasObj, fileName) {
         var pdf = new jsPDF(),
           pdfConf = {
