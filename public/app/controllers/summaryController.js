@@ -19,7 +19,7 @@
         });
     }
     $scope.exportAsPdf = function () {
-        window.print();
+        //window.print();
         ////var pdf = new jsPDF('p', 'pt', 'letter');
         ////pdf.addHTML($('body').get(0), 15, 15,{},function (dispose) {
         ////    pdf.save('Test.pdf');
@@ -44,6 +44,17 @@
 
         //pdf.save('test.pdf');
     }
+
+    //this is the one to be tried
+    //// From html - shows how pdf tables can be be drawn from html tables
+    //pdfHtml = function () {
+        var doc = new jsPDF();
+        doc.text("From HTML", 14, 16);
+        var elem = document.getElementById("tab_customers");
+        var res = doc.autoTableHtmlToJson(elem);
+        doc.autoTable(res.columns, res.data, { startY: 20 });
+         doc.save("test.pdf");
+    //};
 
 
     $scope.$on("$includeContentLoaded", function (event, templateName) {
