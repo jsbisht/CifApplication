@@ -1,62 +1,164 @@
 ﻿var summaryController = candidateInformation.controller("summaryController", ['$scope', 'cifService', function ($scope, cifService) {
     $scope.candidate = {};
     angular.copy(cifService.candidate, $scope.candidate);
-    console.log($scope.candidate);
-    function startPrintProcess(canvasObj, fileName) {
-        var pdf = new jsPDF(),
-          pdfConf = {
-              pagesplit: true,
-              background: '#fff'
-          };
-        document.body.appendChild(canvasObj); //appendChild is required for html to add page in pdf
-        pdf.addHTML(canvasObj, 0, 0, pdfConf, function () {
-            document.body.removeChild(canvasObj);
-            //pdf.addPage();
-            pdf.save(fileName + '.pdf');
-            $(".container").css({ "width": "70%", "margin": "auto", "max-width": "1280px" });
-            //$("button").attr("data-html2canvas-ignore", true);
-            //callback();
-        });
-    }
-    $scope.exportAsPdf = function () {
-        //window.print();
-        ////var pdf = new jsPDF('p', 'pt', 'letter');
-        ////pdf.addHTML($('body').get(0), 15, 15,{},function (dispose) {
-        ////    pdf.save('Test.pdf');
-        ////});
-        $(".container").css({ "width": "595px", "margin": "0"});
-        html2canvas($(".container"),{
-            useCORS: true,
-            //allowTaint:true,
-            onrendered: function (canvas) {
-                theCanvas = canvas;
-                $(".container").css({ "width": "595px", "margin": "0","padding": "20px" });
-                document.body.appendChild(canvas);
-                startPrintProcess(canvas, 'CIF');
-                
+    //console.log($scope.candidate);
+
+    $scope.candidate = {
+        "employeeName": "Some name",
+        "employeeID": "ACS042",
+        "emergencyDetails": {
+            "bloodGroup": "a+",
+            "allergicTo": "dsaffdsf",
+            "bloodPressure": "564",
+            "sugar": "dfadsfdsf",
+            "eyeSight": "6/6",
+            "anyMajorIllness": "dsfdsfa",
+            "emergencyContactPerson": "dsfadsfsfs",
+            "emergencyContactNumber": "56464498",
+            "emergencyContactAddress": "dsfadsfdsfdsfdsf"
+        },
+        "referenceDetails": [
+          {
+              "name": "dsafdsfds",
+              "designation": "dsfdsfadf",
+              "organization": "dfdsfds",
+              "contact": "156156156",
+              "email": "dsfadsfds@dfs.com",
+              "periodOfAcquaintance": "ser 59 - see 46"
+          },
+          {
+              "name": "dsadfsdfsd",
+              "designation": "dsfadsfdsf",
+              "periodOfAcquaintance": "ser 59 - see 46",
+              "email": "dsfadsfds@dfs.com",
+              "organization": "fdsfdafd",
+              "contact": "1549849864986"
+          }
+        ],
+        "employmentDetails": {
+            "employers": [
+              {
+                  "name": "dsaffdsf",
+                  "empID": "dfdsfadfdsf",
+                  "address": "dsfdsfdsafdsf",
+                  "employmentType": "Permanent",
+                  "periodOfEmployment": 5,
+                  "fromDate": "01-08-2017",
+                  "toDate": "20-08-2017",
+                  "designation": "dfdsafdsf",
+                  "lastSalary": 51445646,
+                  "reportingManagersName": "dasfsdfdf",
+                  "reportingManagersDesignation": "dfadfdsf",
+                  "reportingManagersContact": "12651645848",
+                  "reasonForLeaving": "dfsadfdf",
+                  "modeOfSeperation": "Others",
+                  "seperationModeOthers": "dsafdfdsafdsfdsf"
+              }
+            ],
+            "employmentBreakFrom": "10-08-2017",
+            "employmentBreakTo": "02-08-2017",
+            "reasonForEmploymentBreak": "dfsadsfdsfadsfafdsf",
+            "employmentStudiesBreakFrom": "06-08-2017",
+            "employmentStudiesBreakTo": "10-08-2017",
+            "reasonForEmploymentStudiesBreak": "dsafdsfdsfdsfdf"
+        },
+        "educationDetails": {
+            "tenth": {
+                "schoolName": "sdaffdsf",
+                "board": "dfdsafdsf",
+                "regNo": "544646486",
+                "duration": "4558-4654",
+                "yearOfPassing": "6462",
+                "percentage": "56"
+            },
+            "twelth": {
+                "schoolName": "dsfdsaf",
+                "board": "dfadsfds",
+                "regNo": "561654646",
+                "duration": "5688-5666",
+                "yearOfPassing": "5645",
+                "percentage": "89"
+            },
+            "graduation": {
+                "college": "safdsfdsf",
+                "board": "dfdsafds",
+                "regNo": "2155545",
+                "duration": "8996-5656",
+                "yearOfPassing": "5689",
+                "Percentage": "56"
+            },
+            "postGraduation": {
+                "college": "dfsgfgfdgf",
+                "board": "fdgdfgdfg",
+                "regNo": "145644",
+                "duration": "4668-5552",
+                "yearOfPassing": "6568",
+                "percentage": "56"
+            },
+            "personalDetails": {
+                "eduGapReason": "dfsgsdfgdfg"
             }
-        });
-        //var pdf = new jsPDF('p', 'pt', 'letter');
-        ////pdf.canvas.height = 72 * 11;
-        ////pdf.canvas.width = 595;
-
-        //pdf.fromHTML($(".container").html());
-
-        //pdf.save('test.pdf');
+        },
+        "addressDetails": {
+            "current": {
+                "addressLine1": "dfgdfgsdfg",
+                "addressLine2": "dfgdfsgdfg",
+                "addressLine3": "dfgfdgfdg",
+                "addressLine4": "dfgdfgdfg",
+                "cityName": "dfgdfgdfg",
+                "stateName": "fgdfsgdfg",
+                "landmark": "dfgdfgdfgdfg",
+                "durationOfStay": "56",
+                "pinCode": 6654656,
+                "telephone": "5646498498"
+            },
+            "permanent": {
+                "addressLine1": "fdsgfdgdfg",
+                "addressLine2": "dfgsdfgfdgdfg",
+                "addressLine3": "gfdgfgfdg",
+                "addressLine4": "dfgdfgdfsgdfg",
+                "cityName": "fdgsdfgdfg",
+                "stateName": "dfgsdfgdfg",
+                "pinCode": 56156156,
+                "landmark": "dfsgdfgdfg",
+                "durationOfStay": "5",
+                "telephone": "561456156156"
+            }
+        },
+        "personalDetails": {
+            "title": "Mr.",
+            "firstName": "gdfgdfg",
+            "middleName": "fgdfsgdfg",
+            "lastName": "dfgdfsgsdf",
+            "dateOfBirth": "06-08-2017",
+            "placeOfBirth": "dfgsdfgdf",
+            "mobileNumber": "5645646456",
+            "alternateNumber": "5614561456456",
+            "personalEmail": "kjdghdfkjghbj@jdbjds.com",
+            "nationality": "dsfsadfdsf",
+            "passportNumber": "dfhjdsjh67jfjs",
+            "pan": "dfdsmf343hj",
+            "nsr": "34234134324",
+            "fathersName": "dsfdsfdsfdsf",
+            "fathersDOB": "08-08-2017",
+            "mothersName": "sdfasdfdsf",
+            "mothersDOB": "10-08-2017",
+            "spouseName": "dsfdsfasd",
+            "spouseDOB": "08-08-2017",
+            "children": [
+              {
+                  "name": "dsadfdsf",
+                  "DOB": "16-08-2017"
+              }
+            ]
+        }
     }
 
-    //this is the one to be tried
-    //// From html - shows how pdf tables can be be drawn from html tables
-    //pdfHtml = function () {
-        var doc = new jsPDF();
-        doc.text("From HTML", 14, 16);
-        var elem = document.getElementById("tab_customers");
-        var res = doc.autoTableHtmlToJson(elem);
-        doc.autoTable(res.columns, res.data, { startY: 20 });
-         doc.save("test.pdf");
-    //};
+    $scope.exportAsPdf = function () {
+        
+    }
 
-
+ 
     $scope.$on("$includeContentLoaded", function (event, templateName) {
         angular.element(function () {
             $('select').material_select();
