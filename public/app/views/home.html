@@ -1,27 +1,74 @@
 ﻿<div class="row">
-    <h4 class=" center">Prowareness Software Services Pvt. Ltd. </h4>
-    <h3 class=" center">CANDIDATE INFORMATION FORM (CIF) 
-</h3>
+    <h5 class=" center">Prowareness Software Services Pvt. Ltd. </h5>
+    <h4 class=" center">CANDIDATE INFORMATION FORM (CIF) </h4>
+
     <div class="col s12">
         <div class="row">
             <img src="assets/images/profile.png" class="profileImage centerContent" />
         </div>
         <form ng-submit="submitForm()">
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="name" type="text" class="validate" ng-model="candidate.employeeName" required>
-                    <label for="name">Employee Name</label>
+                <!--section 1 -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="name" type="text" class="validate" ng-model="candidate.employeeName">
+                        <label for="name">Employee Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="empId" type="text" class="validate" ng-model="candidate.employeeID">
+                        <label for="empId">Employee ID</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="empId" type="text" class="validate" ng-model="candidate.employeeID" required>
-                    <label for="empId">Employee ID</label>
+
+                <!--section 2 -->
+                <div class='row'>
+                    <div class="col s12 m4 l4 navTab" ng-repeat="anchor in navigations" ui-sref="{{anchor}}">
+                            <div class="card orange" ng-class="{ 'lighten-3':!candidate[anchor+'Details']}">
+                            <div class="card-content white-text">
+                                <span class="card-title">{{anchor | uppercase}} DETAILS</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="row col s12">
-                <button type="submit" class="btn navButton centerContent blue">Next</button>
-            </div>
+
+                <!-- section 3 -->
+                <h5 class="center">Letter of Authorization</h5>
+                <div class="col s12 row">
+                        <p>
+                                <input type="checkbox" class="filled-in" id="agrreAuthorization" ng-model="candidate.letterAccepted"/>
+                                <label for="agrreAuthorization">I agree to provide copies of mark sheets and relevant certificates. I understand that employment
+                                        with Prowareness, is governed by Prowareness, Employment Policies as applicable, including
+                                        satisfactory information from a background check.</p>
+                    
+                                        <p>I hereby certify all of the statements made on the Prowareness, Employee Application Form are
+                                        true and complete and I understand that omission or misrepresentation of any fact may result in
+                                        refusal of employment or immediate dismissal.</p>
+                    
+                                        <p>As a condition of Company's consideration of my application for employment with the Company,
+                                        I hereby give my consent to Prowareness to investigate or cause to be investigated through
+                                        any third parties my personal, educational, pre or post-employment history, criminal and all
+                                        other checks relevant to the company. I understand that the background investigation will
+                                        include, but not be limited to, verification of all information given by me to the Company. I
+                                        confirm that the Company is entitled to share such investigation report with its clients to the
+                                        extent necessary in connection with the Services, which I may be required to provide to such
+                                        clients. I confirm and undertake that the Company shall incur no liability or obligation of any
+                                        nature whatsoever resulting from such investigation or sharing of the investigation results as
+                                        above.</label>
+                                </p>
+    
+                        <br>
+    
+                        <div class="input-field">
+                            <input id="empId" type="text" class="validate" ng-model="candidate.empId">
+                            <label for="empId">Full Name</label>
+                        </div>
+    
+                        <div class="input-field">
+                            <input id="empId" type="text" class="validate" ng-model="candidate.empId">
+                            <label for="empId">Date</label>
+                        </div>
+                </div>
+
+                <button class="btn navButton centerContent blue" ng-click="saveUserDetails()" ng-disabled="enableSubmit">Submit</button>
         </form>
     </div>
 </div>

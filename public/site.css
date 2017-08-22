@@ -6,8 +6,8 @@
 }
 
 .profileImage{
-    height:250px;
-    width:250px;
+    height:150px;
+    width:150px;
     border-radius:50%;
     border:2px solid #2196F3;
 }
@@ -29,6 +29,9 @@ body
 .navButton
 {
     max-width:200px;
+}
+.navTab{
+    cursor: pointer;
 }
 .brand-logo
 {
@@ -53,4 +56,10 @@ body
 h6
 {
     font-weight:bold;
+}
+.dobAlign{
+    margin-top: -8px !important;
+}
+.addBtnFloat{
+    float: right;
 }
