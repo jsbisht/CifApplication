@@ -9,7 +9,7 @@
                 <div class="col s12 m4 l4">
                     <div class="input-field col s4">
                         <select ng-model="candidate.personalDetails.title" required>
-                            <option value="" disabled selected>Title</option>
+                            <option value="" disabled selected>Title <label class="redText" style="color:red">*</label></option>
                             <option value="Mr.">Mr.</option>
                             <option value="Ms.">Ms.</option>
                             <option value="Mrs.">Mrs.</option>
@@ -17,43 +17,43 @@
                     </div>
                     <div class="input-field col s8">
                         <input id="firstName" type="text" class="validate" ng-model="candidate.personalDetails.firstName" required>
-                        <label for="firstName" ng-class="{'active':candidate.personalDetails.firstName}">First Name</label>
+                        <label for="firstName" ng-class="{'active':candidate.personalDetails.firstName}">First Name <span class="redText">*</span></label>
                     </div>
                 </div>
                 <div class="col s12 m4 l4">
                     <div class="input-field ">
                         <input id="middleName" type="text" class="validate" ng-model="candidate.personalDetails.middleName">
-                        <label for="middleName" ng-class="{'active':candidate.personalDetails.middleName}">Middle Name</label>
+                        <label for="middleName" ng-class="{'active':candidate.personalDetails.middleName}">Middle Name </label>
                     </div>
                 </div>
                 <div class="col s12 m4 l4">
                     <div class="input-field">
                         <input id="lastName" type="text" class="validate" ng-model="candidate.personalDetails.lastName" required>
-                        <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Last Name</label>
+                        <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Last Name <span class="redText">*</span></label>
                     </div>
                 </div>
             </div>
             <div class=" col s12 row">
                 <div class="input-field col s12 m4">
-                    <select ng-model="candidate.personalDetails.title" required>
-                        <option value="" disabled selected>Gender</option>
+                    <select ng-model="candidate.personalDetails.gender" required>
+                        <option value="" disabled selected>Gender <span class="redText">*</span></option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
                 </div>
-                <div class="col s12 m4">
-                    <label >Date Of Birth</label>
-                    <input type="text" class="datepicker" ng-model="candidate.personalDetails.dateOfBirth" required>
+                <div class="col s12 m4 dobAlign">
+                    <label>Date Of Birth <span class="redText">*</span></label>
+                    <input type="text" id="DOB" class="validate datepicker" ng-model="candidate.personalDetails.dateOfBirth" required>
                 </div>
                 <div class="input-field col s12 m4">
-                    <input id="placeOfBirth" type="text" class="validate" ng-model="candidate.personalDetails.placeOfBirth" required>
+                    <input id="placeOfBirth" type="text" class="validate" ng-model="candidate.personalDetails.placeOfBirth">
                     <label for="placeOfBirth" ng-class="{'active':candidate.personalDetails.placeOfBirth}">Place Of Birth</label>
                 </div>
             </div>
             <div class="col s12 row">
                 <div class="input-field col s12 m4">
                     <input type="text" ng-model="candidate.personalDetails.mobileNumber" required>
-                    <label for="dateOfBirth" ng-class="{'active':candidate.personalDetails.mobileNumber}">Mobile</label>
+                    <label for="mobileNumber" ng-class="{'active':candidate.personalDetails.mobileNumber}">Mobile <span class="redText">*</span></label>
                 </div>
                 <div class="input-field col s12 m4">
                     <input id="alternateNumber" type="text" class="validate" ng-model="candidate.personalDetails.alternateNumber">
@@ -61,12 +61,12 @@
                 </div>
                 <div class="input-field col s12 m4">
                     <input id="email" type="email" class="validate" ng-model="candidate.personalDetails.personalEmail" required>
-                    <label for="email" ng-class="{'active':candidate.personalDetails.personalEmail}">Email</label>
+                    <label for="email" ng-class="{'active':candidate.personalDetails.personalEmail}">Email <span class="redText">*</span></label>
                 </div>
             </div>
             <div class="col s12 row">
                 <div class="input-field col s12 m3">
-                    <input id="nationality" type="text" class="validate" ng-model="candidate.personalDetails.nationality" required>
+                    <input id="nationality" type="text" class="validate" ng-model="candidate.personalDetails.nationality">
                     <label for="nationality" ng-class="{'active':candidate.personalDetails.nationality}">Nationality</label>
                 </div>
                 <div class="input-field col s12 m3">
@@ -74,7 +74,7 @@
                     <label for="passportNumber" ng-class="{'active':candidate.personalDetails.passportNumber}">Passport Number</label>
                 </div>
                 <div class="input-field col s12 m3">
-                    <input id="pan" type="text" class="validate" ng-model="candidate.personalDetails.pan" required>
+                    <input id="pan" type="text" class="validate" ng-model="candidate.personalDetails.pan">
                     <label for="nationality" ng-class="{'active':candidate.personalDetails.pan}">PAN</label>
                 </div>
                 <div class="input-field col s12 m3">
@@ -83,23 +83,24 @@
                 </div>
             </div>
             <h5 class="center">Family Details</h5>
+            <br><br>
             <div class="col s12 row">
                 <div class="input-field col s12 m6">
                     <input id="fathersName" type="text" class="validate" ng-model="candidate.personalDetails.fathersName" required>
-                    <label for="fathersName" ng-class="{'active':candidate.personalDetails.fathersName}">Fathers Name</label>
+                    <label for="fathersName" ng-class="{'active':candidate.personalDetails.fathersName}">Fathers Name <span class="redText">*</span></label>
                 </div>
                 <div class="dobAlign col s12 m6">
-                    <label for="fathersDOB">Date Of Birth</label>
+                    <label for="fathersDOB">Date Of Birth <span class="redText">*</span></label>
                     <input id="fathersDOB" type="text" class="validate datepicker" ng-model="candidate.personalDetails.fathersDOB" required>
                 </div>
             </div>
             <div class="col s12 row">
                 <div class="input-field col s12 m6">
                     <input id="mothersName" type="text" class="validate" ng-model="candidate.personalDetails.mothersName" required>
-                    <label for="mothersName" ng-class="{'active':candidate.personalDetails.mothersName}">Mothers Name</label>
+                    <label for="mothersName" ng-class="{'active':candidate.personalDetails.mothersName}">Mothers Name <span class="redText">*</span></label>
                 </div>
                 <div class="dobAlign col s12 m6">
-                    <label for="mothersDOB">Date Of Birth</label>
+                    <label for="mothersDOB">Date Of Birth <span class="redText">*</span></label>
                     <input id="mothersDOB" type="text" class="validate datepicker" ng-model="candidate.personalDetails.mothersDOB" required>
                 </div>
             </div>
@@ -116,7 +117,7 @@
             <div class="col s12">
                 <input type="checkbox" class="filled-in" id="children" ng-change="addChildren()" ng-model="hasChildren" />
                 <label for="children">Children</label>
-                <span><button type="button" class="btn blue addBtnFloat" ng-click="addChildren()">
+                <span ng-if="hasChildren"><button type="button" class="btn blue addBtnFloat" ng-click="addChildren()">
                         <i class="material-icons">add</i>
                 </button></span>
             </div>
@@ -136,9 +137,7 @@
                         </button>                      
                     </div>
                 </div>
-                <!-- <div class="col s12 center">
-                    <button type="button" class="btn blue" ng-click="addChildren()">Add Child</button>
-                </div> -->
+
             </div>
             <div class="col s12 row footerRow">
                 <div class="col s12">
