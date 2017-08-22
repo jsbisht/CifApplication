@@ -77,3 +77,12 @@ h6
 .footerRow{
     margin-top: 50px;
 }
+
+td
+{
+    text-align:center;
+}
+table,tr,td
+{
+    border:2px solid black;
+}
