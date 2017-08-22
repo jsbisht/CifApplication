@@ -62,4 +62,18 @@ h6
 }
 .addBtnFloat{
     float: right;
+    border-radius: 17px;
+    padding: 8px;
+    padding-top: 1px;
+}
+
+.deleteBtn{
+    margin-top: 24px;
+    border-radius: 17px;
+    padding: 8px;
+    padding-top: 1px;
+}
+
+.footerRow{
+    margin-top: 50px;
 }

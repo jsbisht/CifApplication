@@ -122,25 +122,25 @@
             </div>
             <div class="col s12 row" ng-if="hasChildren">
                 <div class="row" ng-repeat="child in candidate.personalDetails.children">
-                    <div class="input-field col s12 m4 18">
+                    <div class="input-field col s12 m5 18">
                         <input type="text" class="validate" ng-model="child.name" required>
                         <label ng-class="{'active':child.name}">Child Name</label>
                     </div>
-                    <div class="dobAlign col s12 m4 18">
+                    <div class="dobAlign col s12 m5 18">
                         <label>Date Of Birth</label>
                         <input type="text" class="validate datepicker" ng-model="child.DOB" required>
                     </div>
-                    <div class="col s12 m4 12">                       
-                        <button type="button" class="btn blue" ng-click="deleteChildren($index)">
+                    <div class="col s12 m2 12">                       
+                        <button type="button" class="btn blue deleteBtn" ng-click="deleteChildren($index)">
                             <i class="material-icons">delete</i>
                         </button>                      
                     </div>
                 </div>
-                <!-- <div class="col s12 center"> -->
-                    <!-- <button type="button" class="btn blue" ng-click="addChildren()">Add Child</button> -->
-                <!-- </div> -->
+                <!-- <div class="col s12 center">
+                    <button type="button" class="btn blue" ng-click="addChildren()">Add Child</button>
+                </div> -->
             </div>
-            <div class="col s12 row">
+            <div class="col s12 row footerRow">
                 <div class="col s12">
                         <a ui-sref="home"  class=" btn blue left">Back</a>
                     <button type="submit" class="btn blue right">Save Details</button>
