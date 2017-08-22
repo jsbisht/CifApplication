@@ -46,7 +46,12 @@
                         <label ng-class="{'active':candidate.addressDetails.current.telephone}">Telephone</label>
                     </div>
                 </div>
-
+            <div class="row">
+                    <p>
+                            <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" ng-model="sameAddress"/>
+                            <label for="filled-in-box">Permanent address is same as current</label>
+                          </p>
+            </div>
                 <h5 class="center">Permanent/Native Address (In Detail)</h5>
                 <div class="row">
                     <div class="input-field col s12">
@@ -95,6 +100,7 @@
             </div>
             <div class="col s12 row">
                 <div class="col s12">
+                        <a ui-sref="home"  class=" btn blue left">Back</a>
                     <button type="submit"  class="btn blue right">Save Details</button>
                 </div>
             </div>

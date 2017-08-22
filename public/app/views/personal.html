@@ -88,7 +88,7 @@
                     <input id="fathersName" type="text" class="validate" ng-model="candidate.personalDetails.fathersName" required>
                     <label for="fathersName" ng-class="{'active':candidate.personalDetails.fathersName}">Fathers Name</label>
                 </div>
-                <div class="col s12 m6">
+                <div class="dobAlign col s12 m6">
                     <label for="fathersDOB">Date Of Birth</label>
                     <input id="fathersDOB" type="text" class="validate datepicker" ng-model="candidate.personalDetails.fathersDOB" required>
                 </div>
@@ -98,7 +98,7 @@
                     <input id="mothersName" type="text" class="validate" ng-model="candidate.personalDetails.mothersName" required>
                     <label for="mothersName" ng-class="{'active':candidate.personalDetails.mothersName}">Mothers Name</label>
                 </div>
-                <div class="col s12 m6">
+                <div class="dobAlign col s12 m6">
                     <label for="mothersDOB">Date Of Birth</label>
                     <input id="mothersDOB" type="text" class="validate datepicker" ng-model="candidate.personalDetails.mothersDOB" required>
                 </div>
@@ -108,7 +108,7 @@
                     <input id="spouseName" type="text" class="validate" ng-model="candidate.personalDetails.spouseName">
                     <label for="spouseName" ng-class="{'active':candidate.personalDetails.spouseName}">Spouse Name</label>
                 </div>
-                <div class="col s12 m6">
+                <div class="dobAlign col s12 m6">
                     <label for="spouseDOB">Date Of Birth</label>
                     <input id="spouseDOB" type="text" class="validate datepicker" ng-model="candidate.personalDetails.spouseDOB">
                 </div>
@@ -116,25 +116,33 @@
             <div class="col s12">
                 <input type="checkbox" class="filled-in" id="children" ng-change="addChildren()" ng-model="hasChildren" />
                 <label for="children">Children</label>
+                <span><button type="button" class="btn blue addBtnFloat" ng-click="addChildren()">
+                        <i class="material-icons">add</i>
+                </button></span>
             </div>
             <div class="col s12 row" ng-if="hasChildren">
                 <div class="row" ng-repeat="child in candidate.personalDetails.children">
-                    <div class="input-field col s12 m6">
+                    <div class="input-field col s12 m4 18">
                         <input type="text" class="validate" ng-model="child.name" required>
                         <label ng-class="{'active':child.name}">Child Name</label>
                     </div>
-                    <div class="col s12 m6">
+                    <div class="dobAlign col s12 m4 18">
                         <label>Date Of Birth</label>
                         <input type="text" class="validate datepicker" ng-model="child.DOB" required>
                     </div>
-
+                    <div class="col s12 m4 12">                       
+                        <button type="button" class="btn blue" ng-click="deleteChildren($index)">
+                            <i class="material-icons">delete</i>
+                        </button>                      
+                    </div>
                 </div>
-                <div class="col s12 center">
-                    <button type="button" class="btn blue" ng-click="addChildren()">Add Child</button>
-                </div>
+                <!-- <div class="col s12 center"> -->
+                    <!-- <button type="button" class="btn blue" ng-click="addChildren()">Add Child</button> -->
+                <!-- </div> -->
             </div>
             <div class="col s12 row">
                 <div class="col s12">
+                        <a ui-sref="home"  class=" btn blue left">Back</a>
                     <button type="submit" class="btn blue right">Save Details</button>
                 </div>
             </div>
