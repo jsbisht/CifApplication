@@ -21,12 +21,12 @@ Candidate.prototype.fetch = function (req, res, dbObj) {
 
   res.setHeader('Content-Type', 'application/json');
 
-  var result = dbObj.query('SELECT * FROM candidate', function (err, rows, fields) {
+  var result = dbObj.query('SELECT * FROM ADDITIONAL_INFORMATION', function (err, rows, fields) {
     if (!err) {
       // console.log('The result is ', rows);
     } else {
-      console.log('No results.');
-    }
+      console.log('Error while performing Query.' + err);
+      }
 
     res.send(JSON.stringify(rows));
   });
