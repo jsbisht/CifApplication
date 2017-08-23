@@ -8,6 +8,8 @@ var DateUtils = require('./../DateUtils.js');
 var EducationDetails = require('./EducationDetails.js');
 var ReferenceDetails = require('./ReferenceDetails.js');
 var EmergencyDetails = require('./EmergencyDetails.js');
+var AdditionalInformation = require('./AdditionalInformation.js');
+
 
 
 function DbActions() {}
@@ -39,6 +41,9 @@ DbActions.prototype.insertAll = function(req, res, dbObj) {
                 },
                 function(completed) {
                     EmergencyDetails.insert(req, res, dbObj, details, completed);
+                },
+                function(completed) {
+                    AdditionalInformation.insert(req, res, dbObj, details, completed);
                 }
             ], function(err, results) {
                 console.log('I am here')

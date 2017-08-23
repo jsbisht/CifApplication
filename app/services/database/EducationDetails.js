@@ -1,33 +1,32 @@
 function EducationDetails() {}
 
 EducationDetails.prototype.insert = function (req, res, dbObj, details, callback) {
-    console.log('insertin education details  === ');
     if (req.body.educationDetails.tenth != null && req.body.educationDetails.tenth != undefined) {
-        var tenthArgs = prepareTenthArgs(details,req);
-        insertIntoDB(req, res, dbObj, tenthArgs,callback);
+        var tenthArgs = prepareTenthArgs(details, req);
+        insertIntoDB(req, res, dbObj, tenthArgs, callback);
     }
     if (req.body.educationDetails.twelth != null && req.body.educationDetails.twelth != undefined) {
-        var twelthArgs = prepareTwelthArgs(details,req);
-        insertIntoDB(req, res, dbObj, twelthArgs,callback);
+        var twelthArgs = prepareTwelthArgs(details, req);
+        insertIntoDB(req, res, dbObj, twelthArgs, callback);
     }
     if (req.body.educationDetails.graduation != null && req.body.educationDetails.graduation != undefined) {
-        var graduationArgs = preparegraduationArgs(details,req);
-        insertIntoDB(req, res, dbObj, graduationArgs,callback);
+        var graduationArgs = preparegraduationArgs(details, req);
+        insertIntoDB(req, res, dbObj, graduationArgs, callback);
     }
     if (req.body.educationDetails.postGraduation != null && req.body.educationDetails.postGraduation != undefined) {
-        var postGraduationArgs = preparePostgraduationArgs(details,req);
-        insertIntoDB(req, res, dbObj, postGraduationArgs,callback);
+        var postGraduationArgs = preparePostgraduationArgs(details, req);
+        insertIntoDB(req, res, dbObj, postGraduationArgs, callback);
     }
     callback();
 }
 
-function insertIntoDB(req, res, dbObj, args,callback) {
+function insertIntoDB(req, res, dbObj, args, callback) {
 
     var insQuery = 'insert into EDUCATION_DETAILS SET ?';
     var query = dbObj.query(insQuery, args, function (err, rows, fields) {
 
         if (!err) {
-           
+
         } else {
             console.log('Error while performing Query.' + err);
             res.send('Error while performing Query.' + err);
@@ -37,7 +36,7 @@ function insertIntoDB(req, res, dbObj, args,callback) {
 
 
 
-function prepareTenthArgs(details,req) {
+function prepareTenthArgs(details, req) {
     var tenthArgs = {
         cid: details.cid,
         CLASSLEVEL: "tenth",
@@ -51,7 +50,7 @@ function prepareTenthArgs(details,req) {
     return tenthArgs;
 }
 
-function prepareTwelthArgs(details,req) {
+function prepareTwelthArgs(details, req) {
     var twelthArgs = {
         cid: details.cid,
         CLASSLEVEL: "twelth",
@@ -64,9 +63,9 @@ function prepareTwelthArgs(details,req) {
     return twelthArgs;
 }
 
-function preparegraduationArgs(details,req) {
+function preparegraduationArgs(details, req) {
     var graduationArgs = {
-        cid:details.cid,
+        cid: details.cid,
         CLASSLEVEL: "graduation",
         SCHOOL_NAME: req.body.educationDetails.graduation.college,
         BOARD: req.body.educationDetails.graduation.board,
@@ -77,7 +76,7 @@ function preparegraduationArgs(details,req) {
     return graduationArgs;
 }
 
-function preparePostgraduationArgs(details,req) {
+function preparePostgraduationArgs(details, req) {
     var postGraduationArgs = {
         cid: details.cid,
         CLASSLEVEL: "postGraduation",

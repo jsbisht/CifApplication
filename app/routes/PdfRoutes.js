@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const PDFDocument = require('pdfkit');
-const blobStream = require('blob-stream');
+
 const path = require('path');
 var phantom = require('phantom');
 var http = require('http');

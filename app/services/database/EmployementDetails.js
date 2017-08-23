@@ -2,9 +2,6 @@ function EmployementDetails() {}
 var DateUtils = require('./../DateUtils.js');
 EmployementDetails.prototype.insert = function (req, res, dbObj, details, callback) {
     var employers = req.body.employmentDetails.employers;
-    console.log("req.body.employmentDetails.employers.fromDate = " + req.body.employmentDetails.employers[0].fromDate);
-    console.log("string t date " + DateUtils.stringToDate(req.body.employmentDetails.employers[0].fromDate, "dd-mm-yyyy", "-"));
-
     var employerArray = [];
     employers.forEach(function (employer) {
         employerArray.push([
@@ -30,20 +27,20 @@ EmployementDetails.prototype.insert = function (req, res, dbObj, details, callba
     dbObj.query(insQuery, [employerArray], function (err, rows, fields) {
         if (!err) {
             // console.log('The solution is: ', rows, query);
-            } else {
+        } else {
             console.log('Error while performing Query.' + err);
         }
     });
 
 
-var empBrkArgs = {
-    CID:details.cid,
-    EMPLOYMENT_BREAK_FROM: DateUtils.stringToDate(req.body.employmentDetails.employmentBreakFrom, "dd-mm-yyyy", "-"),
-    EMPLOYMENT_BREAK_TO: DateUtils.stringToDate(req.body.employmentDetails.employmentBreakTo, "dd-mm-yyyy", "-"),
-    EMPLOYMENT_BREAK_REASON: req.body.employmentDetails.reasonForEmploymentBreak,
-    STUDY_EMPLOYMENT_BREAK_FROM: DateUtils.stringToDate(req.body.employmentDetails.employmentStudiesBreakFrom, "dd-mm-yyyy", "-"),
-    STUDY_EMPLOYMENT_BREAK_TO: DateUtils.stringToDate(req.body.employmentDetails.employmentStudiesBreakTo, "dd-mm-yyyy", "-"),
-    STUDY_EMPLOYMENT_BREAK_REASON: req.body.employmentDetails.reasonForEmploymentStudiesBreak
+    var empBrkArgs = {
+        CID: details.cid,
+        EMPLOYMENT_BREAK_FROM: DateUtils.stringToDate(req.body.employmentDetails.employmentBreakFrom, "dd-mm-yyyy", "-"),
+        EMPLOYMENT_BREAK_TO: DateUtils.stringToDate(req.body.employmentDetails.employmentBreakTo, "dd-mm-yyyy", "-"),
+        EMPLOYMENT_BREAK_REASON: req.body.employmentDetails.reasonForEmploymentBreak,
+        STUDY_EMPLOYMENT_BREAK_FROM: DateUtils.stringToDate(req.body.employmentDetails.employmentStudiesBreakFrom, "dd-mm-yyyy", "-"),
+        STUDY_EMPLOYMENT_BREAK_TO: DateUtils.stringToDate(req.body.employmentDetails.employmentStudiesBreakTo, "dd-mm-yyyy", "-"),
+        STUDY_EMPLOYMENT_BREAK_REASON: req.body.employmentDetails.reasonForEmploymentStudiesBreak
     };
 
     var insQuery = 'insert into EMPLOYMENT_BREAK SET ?';
