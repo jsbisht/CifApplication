@@ -16,6 +16,7 @@
             cifService.saveDetails().then(function (response) {
                 // do something with the response
                 //$state.go("summary");
+                localStorage.removeItem("cifFormData");
                 console.log(response);
             }, function (error) {
                 // log the error 

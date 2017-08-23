@@ -12,7 +12,7 @@
                 $scope.candidate.addressDetails.permanent = $scope.candidate.addressDetails.current;
             }
             
-        }else{
+        } else if (newValue==false) {
             $scope.candidate.addressDetails.permanent={};
         }
             

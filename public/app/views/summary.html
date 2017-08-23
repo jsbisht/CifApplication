@@ -12,10 +12,10 @@
             <td colspan="4" class="red-text">*Please expand initials in your name-- As the same would be used in our Employment records</td>
         </tr>
         <tr>
-            <td>Title(Mr./Ms.)</td>
-            <td>First Name</td>
-            <td>Middle Name</td>
-            <td>Last Name</td>
+            <td class="table-title">Title(Mr./Ms.)</td>
+            <td class="table-title">First Name</td>
+            <td class="table-title">Middle Name</td>
+            <td class="table-title">Last Name</td>
         </tr>
         <tr>
             <td>{{::candidate.personalDetails.title}}</td>
@@ -24,9 +24,9 @@
             <td>{{::candidate.personalDetails.lastname}}</td>
         </tr>
         <tr>
-            <td>Gender</td>
-            <td>Date Of Borth</td>
-            <td colspan="2">Place Of Birth</td>
+            <td class="table-title">Gender</td>
+            <td class="table-title">Date Of Borth</td>
+            <td class="table-title" colspan="2">Place Of Birth</td>
         </tr>
         <tr>
             <td>{{::candidate.personalDetails.gender}}</td>
@@ -34,9 +34,9 @@
             <td colspan="2">{{::candidate.personalDetails.placeOfBirth}}</td>
         </tr>
         <tr>
-            <td>Mobile Number</td>
-            <td>Alternate Number</td>
-            <td colspan="2">Personal Email</td>
+            <td class="table-title">Mobile Number</td>
+            <td class="table-title">Alternate Number</td>
+            <td class="table-title" colspan="2">Personal Email</td>
         </tr>
         <tr>
             <td>{{::candidate.personalDetails.mobileNumber}}</td>
@@ -49,10 +49,10 @@
             </td>
         </tr>
         <tr>
-            <td>Nationality</td>
-            <td>Passport Number</td>
-            <td>PAN</td>
-            <td>NSR ITPIN</td>
+            <td class="table-title">Nationality</td>
+            <td class="table-title">Passport Number</td>
+            <td class="table-title">PAN</td>
+            <td class="table-title">NSR ITPIN</td>
         </tr>
         <tr>
             <td>{{::candidate.personalDetails.nationality}}</td>
@@ -61,19 +61,19 @@
             <td>{{::candidate.personalDetails.nsr}}</td>
         </tr>
         <tr>
-            <td colspan="2">Fathers Name & DOB</td>
+            <td class="table-title" colspan="2">Fathers Name & DOB</td>
             <td colspan="2">{{::candidate.personalDetails.fathersName}} {{::candidate.personalDetails.fathersDOB}}</td>
         </tr>
         <tr>
-            <td colspan="2">Mothers Name & DOB</td>
+            <td class="table-title" colspan="2">Mothers Name & DOB</td>
             <td colspan="2">{{::candidate.personalDetails.mothersName}} {{::candidate.personalDetails.mothersDOB}}</td>
         </tr>
         <tr>
-            <td colspan="2">Spouse Name & DOB</td>
+            <td class="table-title" colspan="2">Spouse Name & DOB</td>
             <td colspan="2">{{::candidate.personalDetails.spouseName}} {{::candidate.personalDetails.spouseDOB}}</td>
         </tr>
         <tr ng-repeat="child in candidate.personalDetails.children">
-            <td colspan="2">Child {{$index + 1}} Name & DOB </td>
+            <td class="table-title" colspan="2">Child {{$index + 1}} Name & DOB </td>
             <td colspan="2">{{::child.name}} {{::child.DOB}}</td>
 
         </tr>
@@ -107,24 +107,24 @@
         </tr>
         <tr>
             <td colspan="2">{{::candidate.addressDetails.current.addressLine4}}</td>
-            <td>City:</td>
+            <td class="table-title">City:</td>
             <td>{{::candidate.addressDetails.current.cityName}}</td>
         </tr>
         <tr>
-            <td>State:</td>
+            <td class="table-title">State:</td>
             <td>{{::candidate.addressDetails.current.stateName}}</td>
-            <td>Landmark</td>
+            <td class="table-title">Landmark</td>
             <td>{{::candidate.addressDetails.current.landmark}}</td>
         </tr>
         <tr>
-            <td>Duration of stay:</td>
+            <td class="table-title">Duration of stay:</td>
             <td>{{::candidate.addressDetails.current.durationOfStay}}</td>
             <td>Pin:</td>
             <td>{{::candidate.addressDetails.current.pinCode}}</td>
 
         </tr>
         <tr>
-            <td colspan="2">Contact:</td>
+            <td class="table-title" colspan="2">Contact:</td>
             <td colspan="2">{{::candidate.addressDetails.current.telephone}}</td>
         </tr>
 
@@ -145,24 +145,24 @@
         </tr>
         <tr>
             <td colspan="2">{{::candidate.addressDetails.permanent.addressLine4}}</td>
-            <td>City:</td>
+            <td class="table-title">City:</td>
             <td>{{::candidate.addressDetails.permanent.cityName}}</td>
         </tr>
         <tr>
-            <td>State:</td>
+            <td class="table-title">State:</td>
             <td>{{::candidate.addressDetails.permanent.stateName}}</td>
-            <td>Landmark:</td>
+            <td class="table-title">Landmark:</td>
             <td>{{::candidate.addressDetails.permanent.landmark}}</td>
         </tr>
         <tr>
-            <td>Duration of stay:</td>
+            <td class="table-title">Duration of stay:</td>
             <td>{{::candidate.addressDetails.permanent.durationOfStay}}</td>
-            <td>Pin:</td>
+            <td class="table-title">Pin:</td>
             <td>{{::candidate.addressDetails.permanent.pinCode}}</td>
 
         </tr>
         <tr>
-            <td colspan="2">Contact:</td>
+            <td class="table-title" colspan="2">Contact:</td>
             <td colspan="2">{{::candidate.addressDetails.permanent.telephone}}</td>
         </tr>
 
@@ -172,77 +172,56 @@
 <div style="page-break-after: always;">
     <!-- content -->
 </div>
-<table class="summary">
-    <thead>
-        <tr>
-            <td colspan="7">
-                <h6>EDUCATION DETAILS</h6>
-            </td>
-        </tr>
-        <tr>
-            <th>Qualification
-            </th>
-            <th>Institute Name & City
-            </th>
-            <th>University/Board & City
-            </th>
-            <th>Student ID/Reg No.
-            </th>
-            <th>Period (From-To)YYYY
-            </th>
-            <th>Year Of Passing
-            </th>
-            <th>% marks/CGPA
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>10th
-            </td>
-            <td>{{::candidate.educationDetails.tenth.schoolName}}</td>
-            <td>{{::candidate.educationDetails.tenth.board}}</td>
-            <td>{{::candidate.educationDetails.tenth.regNo}}</td>
-            <td>{{::candidate.educationDetails.tenth.duration}}</td>
-            <td>{{::candidate.educationDetails.tenth.yearOfPassing}}</td>
-            <td>{{::candidate.educationDetails.tenth.percentage}}</td>
-        </tr>
-        <tr>
-            <td>12th
-            </td>
-            <td>{{::candidate.educationDetails.twelth.schoolName}}</td>
-            <td>{{::candidate.educationDetails.twelth.board}}</td>
-            <td>{{::candidate.educationDetails.twelth.regNo}}</td>
-            <td>{{::candidate.educationDetails.twelth.duration}}</td>
-            <td>{{::candidate.educationDetails.twelth.yearOfPassing}}</td>
-            <td>{{::candidate.educationDetails.twelth.percentage}}</td>
-        </tr>
-        <tr>
-            <td>Graduation
-            </td>
-            <td>{{::candidate.educationDetails.graduation.college}}</td>
-            <td>{{::candidate.educationDetails.graduation.board}}</td>
-            <td>{{::candidate.educationDetails.graduation.regNo}}</td>
-            <td>{{::candidate.educationDetails.graduation.duration}}</td>
-            <td>{{::candidate.educationDetails.graduation.yearOfPassing}}</td>
-            <td>{{::candidate.educationDetails.graduation.percentage}}</td>
-        </tr>
-        <tr ng-if="candidate.educationDetails.postGraduation">
-            <td>Post Graduation
-            </td>
-            <td>{{::candidate.educationDetails.postGraduation.college}}</td>
-            <td>{{::candidate.educationDetails.postGraduation.board}}</td>
-            <td>{{::candidate.educationDetails.postGraduation.regNo}}</td>
-            <td>{{::candidate.educationDetails.postGraduation.duration}}</td>
-            <td>{{::candidate.educationDetails.postGraduation.yearOfPassing}}</td>
-            <td>{{::candidate.educationDetails.postGraduation.percentage}}</td>
-        </tr>
-        <tr ng-if="">
-            <td>Reason for Gap in education</td>
-            <td colspan="6">{{::candidate.educationDetails.eduGapReason}}</td>
-        </tr>
+ 
 
-    </tbody>
+
+<table class="summary">
+    <tr>
+        <td class="table-title">Qualification</td><td class="table-title">10th</td><td class="table-title">12th</td><td class="table-title">Graduation</td><td class="table-title">Post Graduation</td>
+    </tr>
+    <tr>
+        <td class="table-title">Institute Name & City</td>
+        <td>{{::candidate.educationDetails.tenth.schoolName}}</td>
+        <td>{{::candidate.educationDetails.twelth.schoolName}}</td>
+        <td>{{::candidate.educationDetails.graduation.college}}</td>
+        <td>{{::candidate.educationDetails.postGraduation.college}}</td>
+    </tr>
+    <tr>
+        <td class="table-title">University/Board & City</td>
+
+         <td>{{::candidate.educationDetails.tenth.board}}</td>
+        <td>{{::candidate.educationDetails.twelth.board}}</td>
+        <td>{{::candidate.educationDetails.graduation.board}}</td>
+        <td>{{::candidate.educationDetails.postGraduation.board}}</td>
+    </tr>
+    <tr>
+        <td class="table-title">Student ID/Reg No.</td>
+        <td>{{::candidate.educationDetails.tenth.regNo}}</td>
+        <td>{{::candidate.educationDetails.twelth.regNo}}</td>
+        <td>{{::candidate.educationDetails.graduation.regNo}}</td>
+        <td>{{::candidate.educationDetails.postGraduation.regNo}}</td>
+    </tr>
+    <tr>
+        <td class="table-title">Period (From-To)YYYY</td>
+        <td>{{::candidate.educationDetails.tenth.duration}}</td>
+        <td>{{::candidate.educationDetails.twelth.duration}}</td>
+        <td>{{::candidate.educationDetails.graduation.duration}}</td>
+        <td>{{::candidate.educationDetails.postGraduation.duration}}</td>
+    </tr>
+    <tr>
+        <td class="table-title">Year Of Passing</td>
+        <td>{{::candidate.educationDetails.tenth.yearOfPassing}}</td>
+        <td>{{::candidate.educationDetails.twelth.yearOfPassing}}</td>
+        <td>{{::candidate.educationDetails.graduation.yearOfPassing}}</td>
+        <td>{{::candidate.educationDetails.postGraduation.yearOfPassing}}</td>
+    </tr>
+    <tr>
+        <td class="table-title">% marks/CGPA</td> 
+        <td>{{::candidate.educationDetails.tenth.percentage}}</td>
+        <td>{{::candidate.educationDetails.twelth.percentage}}</td>
+        <td>{{::candidate.educationDetails.graduation.percentage}}</td>
+        <td>{{::candidate.educationDetails.postGraduation.percentage}}</td>
+    </tr>
 </table>
 <div style="page-break-after: always;">
     <!-- content -->
@@ -263,76 +242,76 @@
         <table class="summary">
             <tbody>
                 <tr>
-                    <td colspan="2">Employer {{$index + 1}}</td>
+                    <td class="table-title" colspan="2">Employer {{$index + 1}}</td>
                 </tr>
                 <tr>
-                    <td>Organization Name:
+                    <td class="table-title">Organization Name:
                     </td>
                     <td>{{::employer.name}}
                     </td>
                 </tr>
                 <tr>
-                    <td>Address(Branch Name):
+                    <td class="table-title">Address(Branch Name):
                     </td>
                     <td>{{::employer.address}}
                     </td>
                 </tr>
                 <tr>
-                    <td>Employee ID:
+                    <td class="table-title">Employee ID:
                     </td>
                     <td>{{::employer.empID}}
                     </td>
                 </tr>
                 <tr>
-                    <td>Type of Employment:
+                    <td class="table-title">Type of Employment:
                     </td>
                     <td>{{::employer.employmentType}}
                     </td>
                 </tr>
                 <tr>
-                    <td>Period of employment
+                    <td class="table-title">Period of employment
                     </td>
                     <td>{{::employer.periodOfEmployment}} years (From:{{::employer.fromDate}} - To:{{::employer.toDate}})
                     </td>
                 </tr>
                 <tr>
-                    <td>Last Designation held
+                    <td class="table-title">Last Designation held
                     </td>
                     <td>{{::employer.designation}}
                     </td>
                 </tr>
                 <tr>
-                    <td>Last Drawn Salary
+                    <td class="table-title">Last Drawn Salary
                     </td>
                     <td>{{::employer.lastSalary}}
                     </td>
                 </tr>
                 <tr>
-                    <td>Reporting Manager
+                    <td class="table-title">Reporting Manager
                     </td>
                     <td>{{::employer.reportingManagersName}}
                     </td>
                 </tr>
                 <tr>
-                    <td>Reporting Manager Designation
+                    <td class="table-title">Reporting Manager Designation
                     </td>
                     <td>{{::employer.reportingManagersDesignation}}
                     </td>
                 </tr>
                 <tr>
-                    <td>Reporting Manager Contact
+                    <td class="table-title">Reporting Manager Contact
                     </td>
                     <td>{{::employer.reportingManagersContact}}
                     </td>
                 </tr>
                 <tr>
-                    <td>Reason For Leaving
+                    <td class="table-title">Reason For Leaving
                     </td>
                     <td>{{::employer.reasonForLeaving}}
                     </td>
                 </tr>
                 <tr>
-                    <td>Mode of Separation
+                    <td class="table-title">Mode of Separation
                     </td>
                     <td>{{::employer.modeOfSeperation}} <span ng-if="employer.seperationModeOthers">{{::employer.seperationModeOthers}}</span>
                     </td>
@@ -350,12 +329,12 @@
 <table class="summary" ng-if="candidate.employmentDetails.employmentBreakFrom || candidate.employmentDetails.employmentStudiesBreakFrom">
     <tbody>
         <tr ng-if="candidate.employmentDetails.employmentBreakFrom">
-            <td colspan="3">Break in employment (if any)</td>
+            <td class="table-title" colspan="3">Break in employment (if any)</td>
         </tr>
         <tr ng-if="candidate.employmentDetails.employmentBreakFrom">
-            <td>Break From</td>
-            <td>Break To</td>
-            <td>Reason For Break</td>
+            <td class="table-title">Break From</td>
+            <td class="table-title">Break To</td>
+            <td class="table-title">Reason For Break</td>
         </tr>
         <tr>
             <td>{{::candidate.employmentDetails.employmentBreakFrom}}</td>
@@ -368,9 +347,9 @@
             <td colspan="3">Break between studies & employment (if any)</td>
         </tr>
         <tr ng-if="candidate.employmentDetails.employmentStudiesBreakFrom">
-            <td>Break From</td>
-            <td>Break To</td>
-            <td>Reason For Break</td>
+            <td class="table-title">Break From</td>
+            <td class="table-title">Break To</td>
+            <td class="table-title">Reason For Break</td>
         </tr>
         <tr ng-if="candidate.employmentDetails.employmentStudiesBreakFrom">
             <td>{{::candidate.employmentDetails.employmentStudiesBreakFrom}}</td>
@@ -393,27 +372,27 @@
                 </td>
             </tr>
             <tr>
-                <td>Name</td>
+                <td class="table-title">Name</td>
                 <td>{{::reference.name}}</td>
             </tr>
             <tr>
-                <td>Designation</td>
+                <td class="table-title">Designation</td>
                 <td>{{::reference.designation}}</td>
             </tr>
             <tr>
-                <td>Organization Name</td>
+                <td class="table-title">Organization Name</td>
                 <td>{{::reference.organization}}</td>
             </tr>
             <tr>
-                <td>Contact No.</td>
+                <td class="table-title">Contact No.</td>
                 <td>{{::reference.contact}}</td>
             </tr>
             <tr>
-                <td>Email ID</td>
+                <td class="table-title">Email ID</td>
                 <td>{{::reference.email}}</td>
             </tr>
             <tr>
-                <td>Period of Acquaintance (ex. Sepr 08 - Jul 09)</td>
+                <td class="table-title">Period of Acquaintance (ex. Sepr 08 - Jul 09)</td>
                 <td>{{::reference.periodOfAcquaintance}}</td>
             </tr>
         </tbody>
@@ -428,39 +407,39 @@
     <thead><tr><td colspan="2"><h6>EMERGENCY DETAILS</h6></td></tr></thead>
     <tbody>
         <tr>
-            <td>Blood Group</td>
+            <td class="table-title">Blood Group</td>
             <td>{{::candidate.emergencyDetails.bloodGroup}}</td>
         </tr>
         <tr>
-            <td>Allergic To</td>
+            <td class="table-title">Allergic To</td>
             <td>{{::candidate.emergencyDetails.allergicTo}}</td>
         </tr>
         <tr>
-            <td>Blood Pressure</td>
+            <td class="table-title">Blood Pressure</td>
             <td>{{::candidate.emergencyDetails.bloodPressure}}</td>
         </tr>
         <tr>
-            <td>Sugar</td>
+            <td class="table-title">Sugar</td>
             <td>{{::candidate.emergencyDetails.sugar}}</td>
         </tr>
         <tr>
-            <td>Eye Sight</td>
+            <td class="table-title">Eye Sight</td>
             <td>{{::candidate.emergencyDetails.eyeSight}}</td>
         </tr>
         <tr>
-            <td>Any Major Illness</td>
+            <td class="table-title">Any Major Illness</td>
             <td>{{::candidate.emergencyDetails.anyMajorIllness}}</td>
         </tr>
         <tr>
-            <td>Contact Person in Emergency</td>
+            <td class="table-title">Contact Person in Emergency</td>
             <td>{{::candidate.emergencyDetails.emergencyContactPerson}}</td>
         </tr>
         <tr>
-            <td>Emergency Contact Address</td>
+            <td class="table-title">Emergency Contact Address</td>
             <td>{{::candidate.emergencyDetails.emergencyContactAddress}}</td>
         </tr>
         <tr>
-            <td>Emergency Contact Number</td>
+            <td class="table-title">Emergency Contact Number</td>
             <td>{{::candidate.emergencyDetails.emergencyContactNumber}}</td>
         </tr>
     </tbody>
@@ -473,49 +452,49 @@
     <thead><tr><td colspan="2"><h6>ADDITIONAL DETAILS</h6></td></tr></thead>
     <tbody>
         <tr>
-           <td colspan="2">Physical Disablities, If Any</td> 
+           <td class="table-title" colspan="2">Physical Disablities, If Any</td> 
         </tr>
         <tr>
             <td colspan="2">{{::candidate.additionalDetails.disablilities}}</td>
         </tr>
         <tr>
-           <td colspan="2">Have you been involved in Court Proceeding (If yes, please provide details on a seperate sheet of paper)</td> 
+           <td class="table-title" colspan="2">Have you been involved in Court Proceeding (If yes, please provide details on a seperate sheet of paper)</td> 
         </tr>
         <tr>
             <td colspan="2">{{::candidate.additionalDetails.courtProceedings}}</td>
         </tr>
         <tr>
-           <td colspan="2">Physical Disablities, If Any</td> 
+           <td class="table-title" colspan="2">Physical Disablities, If Any</td> 
         </tr>
         <tr>
             <td colspan="2">{{::candidate.additionalDetails.disablilities}}</td>
         </tr>
         <tr>
-           <td colspan="2">PPreviously have you ever been interviewed in Prowareness? If yes, please provide details</td> 
+           <td class="table-title" colspan="2">PPreviously have you ever been interviewed in Prowareness? If yes, please provide details</td> 
         </tr>
         <tr>
             <td colspan="2">Interviewed On: {{::candidate.additionalDetails.interviedOn}}, Outcome: {{::candidate.additionalDetails.interviedOutcome}}</td>
         </tr>
         <tr>
-           <td colspan="2">Your Hobbies</td> 
+           <td class="table-title" colspan="2">Your Hobbies</td> 
         </tr>
         <tr>
             <td colspan="2">{{::candidate.additionalDetails.hobbies}}</td>
         </tr>
         <tr>
-           <td colspan="2">Your Interests</td> 
+           <td class="table-title" colspan="2">Your Interests</td> 
         </tr>
         <tr>
             <td colspan="2">{{::candidate.additionalDetails.interests}}</td>
         </tr>
         <tr>
-           <td colspan="2">Your Goal / Aim in life</td> 
+           <td class="table-title" colspan="2">Your Goal / Aim in life</td> 
         </tr>
         <tr>
             <td colspan="2">{{::candidate.additionalDetails.goalsInLife}}</td>
         </tr>
         <tr>
-           <td colspan="2">Prinicipals / ideals which have guided you in life</td> 
+           <td class="table-title" colspan="2">Prinicipals / ideals which have guided you in life</td> 
         </tr>
         <tr>
             <td colspan="2">{{::candidate.additionalDetails.lifePrincipals}}</td>
@@ -548,7 +527,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2">
+            <td class="table-title" colspan="2">
                 Are you willing to Travel in India
             </td>
         </tr>
@@ -558,7 +537,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2">
+            <td class="table-title" colspan="2">
                 Are you willing to Travel Abroad
             </td>
         </tr>
@@ -568,13 +547,13 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2">State restrications/problems if any for travel</td>
+            <td class="table-title" colspan="2">State restrications/problems if any for travel</td>
         </tr>
         <tr>
             <td colspan="2">{{::candidate.additionalDetails.travelStateRestrictions}}</td>
         </tr>
         <tr>
-            <td colspan="2">
+            <td class="table-title" colspan="2">
                 Are you related to any of the employees? If yes please refer the name
             </td>
         </tr>
@@ -584,25 +563,25 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2">Publication if any (list with specimen copy)</td>
+            <td class="table-title" colspan="2">Publication if any (list with specimen copy)</td>
         </tr>
         <tr>
             <td colspan="2">{{::candidate.additionalDetails.publications}}</td>
         </tr>
         <tr>
-            <td colspan="2">Any specialized Training Program attended</td>
+            <td class="table-title" colspan="2">Any specialized Training Program attended</td>
         </tr>
         <tr>
             <td colspan="2">{{::candidate.additionalDetails.trainingAttended}}</td>
         </tr>
           <tr>
-            <td colspan="2">Would you like to attend any specific training</td>
+            <td class="table-title" colspan="2">Would you like to attend any specific training</td>
         </tr>
         <tr>
             <td colspan="2">{{::candidate.additionalDetails.interestedInTrainings}}</td>
         </tr>
         <tr>
-            <td colspan="2">Any other information/Suggestion</td>
+            <td class="table-title" colspan="2">Any other information/Suggestion</td>
         </tr>
         <tr>
             <td colspan="2">{{::candidate.additionalDetails.suggestions}}</td>
