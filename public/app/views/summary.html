@@ -1,6 +1,6 @@
-﻿<div class="row ">
+﻿<!--<div class="row ">
     <label class="btn blue" ng-click="exportAsPdf()">Download PDF</label>
-</div>
+</div>-->
 <table id="summaryTable" class="summary">
     <tbody>
         <tr>
@@ -520,6 +520,13 @@
         <tr>
             <td colspan="2">{{::candidate.additionalDetails.lifePrincipals}}</td>
         </tr>
+        </tbody>
+    </table>
+<div style="page-break-after: always;">
+    <!-- content -->
+</div>
+<table class="summary">
+    <tbody>
         <tr>
             <td><h6>Strengths</h6></td>
             <td><h6>Weakness</h6></td>
@@ -602,3 +609,35 @@
         </tr>
     </tbody>
 </table>
+
+<div style="page-break-after: always;">
+    <!-- content -->
+</div>
+<div>
+
+    <p style="margin-bottom:1.5em;">
+        <input type="checkbox" class="filled-in" id="agrreAuthorization" ng-model="candidate.letterAccepted" disabled/> <label>I agree to provide copies of mark sheets and relevant certificates. I understand that employment
+                                        with Prowareness, is governed by Prowareness, Employment Policies as applicable, including
+                                        satisfactory information from a background check.</label> </p>
+                    
+                                        <p style="margin-top:3em;">
+                                            I hereby certify all of the statements made on the Prowareness, Employee Application Form are
+                                        true and complete and I understand that omission or misrepresentation of any fact may result in
+                                        refusal of employment or immediate dismissal.
+        </p>
+
+        <p>
+            As a condition of Company's consideration of my application for employment with the Company,
+                                        I hereby give my consent to Prowareness to investigate or cause to be investigated through
+                                        any third parties my personal, educational, pre or post-employment history, criminal and all
+                                        other checks relevant to the company. I understand that the background investigation will
+                                        include, but not be limited to, verification of all information given by me to the Company. I
+                                        confirm that the Company is entitled to share such investigation report with its clients to the
+                                        extent necessary in connection with the Services, which I may be required to provide to such
+                                        clients. I confirm and undertake that the Company shall incur no liability or obligation of any
+                                        nature whatsoever resulting from such investigation or sharing of the investigation results as
+                                        above.
+       
+    </p>
+   
+</div>

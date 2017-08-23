@@ -3,6 +3,7 @@ var additionalController = candidateInformation.controller("additionalController
     angular.copy(cifService.candidate, $scope.candidate);
     $scope.submitForm = function () {
         cifService.candidate = $scope.candidate;
-        $state.go('navigation');
+        localStorage.setItem("cifFormData", JSON.stringify($scope.candidate));
+        $state.go('home');
     }
 }])

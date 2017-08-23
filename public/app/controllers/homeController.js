@@ -15,7 +15,7 @@
             //save the user details to database
             cifService.saveDetails().then(function (response) {
                 // do something with the response
-                $state.go("summary");
+                //$state.go("summary");
                 console.log(response);
             }, function (error) {
                 // log the error 

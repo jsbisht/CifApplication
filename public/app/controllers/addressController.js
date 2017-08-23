@@ -3,8 +3,15 @@
     angular.copy(cifService.candidate, $scope.candidate);
     
     $scope.$watch('sameAddress', function(newValue, oldValue) {
-        if (newValue){
-            $scope.candidate.addressDetails.permanent=$scope.candidate.addressDetails.current;
+        if (newValue) {
+            if (angular.isUndefined($scope.candidate.addressDetails)) {
+                $scope.sameAddress = false;
+                alert("Please fill in Current address first.");
+                return;
+            } else {
+                $scope.candidate.addressDetails.permanent = $scope.candidate.addressDetails.current;
+            }
+            
         }else{
             $scope.candidate.addressDetails.permanent={};
         }
@@ -12,6 +19,7 @@
     }, true);
     $scope.submitForm = function () {
         cifService.candidate = $scope.candidate;
-        $state.go('navigation');
+        localStorage.setItem("cifFormData", JSON.stringify($scope.candidate));
+        $state.go('home');
     }
 }])

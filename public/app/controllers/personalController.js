@@ -36,7 +36,8 @@
     }
     $scope.submitForm = function () {
         cifService.candidate = $scope.candidate;
-        $state.go('navigation');
+        localStorage.setItem("cifFormData", JSON.stringify($scope.candidate));
+        $state.go('home');
     }
     function initializeDatepicker() {
         $('.datepicker').pickadate({

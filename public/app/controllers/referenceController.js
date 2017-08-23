@@ -8,7 +8,8 @@
     $scope.submitForm = function () {
         //submit the form store the candidate data to service to be visible to other controllers
         cifService.candidate = $scope.candidate;
-        $state.go('navigation');
+        localStorage.setItem("cifFormData", JSON.stringify($scope.candidate));
+        $state.go('home');
     }
    
 

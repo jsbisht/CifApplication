@@ -27,12 +27,9 @@ router.get('/toPDF', function (req, res) {
             //page.property('viewportSize', { width: 1024, height: 768 });
             page.property('paperSize', { format: 'A4', orientation: 'portrait' });
             //page.property('zoomFactor', 1);
-            page.open("http://localhost:3000/#!/personal").then(function (status) {
-                console.log('Tring to download file');
+            page.open("http://localhost:3000/#!/summary").then(function (status) {
                 page.render('Cif_Form.pdf').then(function() {
-                    console.log('Page Rendered');
                     download('http://localhost:3000/Cif_Form.pdf', 'localhost:3000/api/toPDF', function () {
-                        console.log('Download successful');
                         ph.exit();
                     })
                 });

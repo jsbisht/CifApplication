@@ -58,8 +58,17 @@ candidateInformation.config(function ($stateProvider, $urlRouterProvider) {
 
 });
 
+candidateInformation.run(function (cifService) {
+    var cifData = localStorage.getItem("cifFormData");
+    if (!angular.isUndefined(cifData) && cifData!=null) {
+        cifService.candidate = JSON.parse(cifData);
+    } else {
+        cifService.candidate = {};
+    }
+})
+
 candidateInformation.service('cifService', function ($http) {
-    this.candidate = {};
+    //this.candidate = {};
     this.saveDetails = function () {
         return $http.post('/db/save', this.candidate);
             

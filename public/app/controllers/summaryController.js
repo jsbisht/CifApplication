@@ -4,6 +4,7 @@
     //console.log($scope.candidate);
 
     $scope.candidate = {
+        "letterAccepted": true,
         "employeeName": "Some name",
         "employeeID": "ACS042",
         "emergencyDetails": {
