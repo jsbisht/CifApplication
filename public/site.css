@@ -6,8 +6,8 @@
 }
 
 .profileImage{
-    height:250px;
-    width:250px;
+    height:150px;
+    width:150px;
     border-radius:50%;
     border:2px solid #2196F3;
 }
@@ -19,6 +19,7 @@ body
 {
     background-color:white;
     min-height:100%;
+    padding:10px;
 }
 .centerContent
 {
@@ -28,6 +29,9 @@ body
 .navButton
 {
     max-width:200px;
+}
+.navTab{
+    cursor: pointer;
 }
 .brand-logo
 {
@@ -52,4 +56,38 @@ body
 h6
 {
     font-weight:bold;
+}
+.dobAlign{
+    margin-top: -8px !important;
+}
+.addBtnFloat{
+    float: right;
+    border-radius: 17px;
+    padding: 8px;
+    padding-top: 1px;
+}
+
+.deleteBtn{
+    margin-top: 24px;
+    border-radius: 17px;
+    padding: 8px;
+    padding-top: 1px;
+}
+
+.footerRow{
+    margin-top: 50px;
+}
+
+td
+{
+    text-align:center;
+}
+table.summary  tr td, tr th
+{
+    border:2px solid black;
+}
+
+#additionalTable td
+{
+    text-align:left !important;
 }

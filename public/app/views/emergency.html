@@ -5,62 +5,57 @@
                 <div class="col s12 row">
                     <div class="col s12 m4 l4">
                         <div class="input-field ">
-                            <input id="middleName" type="text" class="validate" ng-model="candidate.personalDetails.middleName">
-                            <label for="middleName" ng-class="{'active':candidate.personalDetails.middleName}">Blood Group</label>
+                            <input  type="text" class="validate" ng-model="candidate.emergencyDetails.bloodGroup">
+                            <label  ng-class="{'active':candidate.emergencyDetails.bloodGroup}">Blood Group</label>
                         </div>
                     </div>
                     <div class="col s12 m4 l4">
                         <div class="input-field ">
-                            <input id="middleName" type="text" class="validate" ng-model="candidate.personalDetails.middleName">
-                            <label for="middleName" ng-class="{'active':candidate.personalDetails.middleName}">Allergic To</label>
+                            <input  type="text" class="validate" ng-model="candidate.emergencyDetails.allergicTo">
+                            <label  ng-class="{'active':candidate.emergencyDetails.allergicTo}">Allergic To</label>
                         </div>
                     </div>
                     <div class="col s12 m4 l4">
                         <div class="input-field">
-                            <input id="lastName" type="text" class="validate" ng-model="candidate.personalDetails.lastName" required>
-                            <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Blood Pressure</label>
+                            <input  type="text" class="validate" ng-model="candidate.emergencyDetails.bloodPressure" required>
+                            <label  ng-class="{'active':candidate.emergencyDetails.bloodPressure}">Blood Pressure</label>
                         </div>
                     </div>
                     <div class="col s12 m4 l4">
                         <div class="input-field">
-                            <input id="lastName" type="text" class="validate" ng-model="candidate.personalDetails.lastName" required>
-                            <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Sugar</label>
+                            <input  type="text" class="validate" ng-model="candidate.emergencyDetails.sugar" required>
+                            <label  ng-class="{'active':candidate.emergencyDetails.sugar}">Sugar</label>
                         </div>
                     </div>
                     <div class="col s12 m4 l4">
                         <div class="input-field">
-                            <input id="lastName" type="text" class="validate" ng-model="candidate.personalDetails.lastName" required>
-                            <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Eye sight</label>
+                            <input  type="text" class="validate" ng-model="candidate.emergencyDetails.eyeSight" required>
+                            <label  ng-class="{'active':candidate.emergencyDetails.eyeSight}">Eye sight</label>
                         </div>
                     </div>
                     <div class="col s12 m4 l4">
                         <div class="input-field">
-                            <input id="lastName" type="text" class="validate" ng-model="candidate.personalDetails.lastName" required>
-                            <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Any major illness</label>
+                            <input  type="text" class="validate" ng-model="candidate.emergencyDetails.anyMajorIllness" required>
+                            <label  ng-class="{'active':candidate.emergencyDetails.anyMajorIllness}">Any major illness</label>
                         </div>
                     </div>
-                    <div class="col s12 m4 l4">
+                    <div class="col s12 m6">
                             <div class="input-field">
-                                <input id="lastName" type="text" class="validate" ng-model="candidate.personalDetails.lastName" required>
-                                <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Contact person in case</label>
+                                <input  type="text" class="validate" ng-model="candidate.emergencyDetails.emergencyContactPerson" required>
+                                <label  ng-class="{'active':candidate.emergencyDetails.emergencyContactPerson}">Contact person in emergency</label>
                             </div>
                     </div>
-                    <div class="col s12 m4 l4">
+                    
+                    <div class="col s12 m6">
                         <div class="input-field">
-                            <input id="lastName" type="text" class="validate" ng-model="candidate.personalDetails.lastName" required>
-                            <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Any major illness</label>
+                            <input  type="text" class="validate" ng-model="candidate.emergencyDetails.emergencyContactNumber" required>
+                            <label  ng-class="{'active':candidate.emergencyDetails.emergencyContactNumber}">Contact No.</label>
                         </div>
                     </div>
-                    <div class="col s12 m4 l4">
-                            <div class="input-field">
-                                <input id="lastName" type="text" class="validate" ng-model="candidate.personalDetails.lastName" required>
-                                <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Contact person in case</label>
-                            </div>
-                    </div>
-                    <div class="col s12 m4 l4">
+                    <div class="col s12">
                         <div class="input-field">
-                            <input id="lastName" type="text" class="validate" ng-model="candidate.personalDetails.lastName" required>
-                            <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Address & Phone Number</label>
+                            <input  type="text" class="validate" ng-model="candidate.emergencyDetails.emergencyContactAddress" required>
+                            <label  ng-class="{'active':candidate.emergencyDetails.emergencyContactAddress}">Address of Emergency Contact</label>
                         </div>
                     </div>
                 </div>
@@ -68,6 +63,7 @@
       
                 <div class="col s12 row">
                     <div class="col s12">
+                            <a ui-sref="home"  class=" btn blue left">Back</a>
                         <button type="submit" class="btn blue right">Save Details</button>
                     </div>
                 </div>

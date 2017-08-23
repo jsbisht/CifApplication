@@ -9,8 +9,13 @@ candidateInformation.config(function ($stateProvider, $urlRouterProvider) {
             url: '/',
             templateUrl: 'app/views/home.html',
             controller: 'homeController'
-        })
-        .state('address', {
+        }).
+        state('additional', {
+            url: '/additional',
+            templateUrl: 'app/views/additional.html',
+            controller: 'additionalController'
+        }).
+        state('address', {
             url: '/address',
             templateUrl: 'app/views/address.html',
             controller: 'addressController'
@@ -56,7 +61,7 @@ candidateInformation.config(function ($stateProvider, $urlRouterProvider) {
 candidateInformation.service('cifService', function ($http) {
     this.candidate = {};
     this.saveDetails = function () {
-        return $http.post('/db/save', { 'dummy': 'data' });
+        return $http.post('/db/save', this.candidate);
             
     }
 })
