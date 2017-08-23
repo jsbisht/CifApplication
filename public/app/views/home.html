@@ -21,14 +21,15 @@
 
                 <!--section 2 -->
                 <div class='row'>
-                    <div class="col s12 m4 l4 navTab" ng-repeat="anchor in navigations" ui-sref="{{anchor}}">
+                    <div class="col s12 m4 l3 navTab" ng-repeat="anchor in navigations" ui-sref="{{anchor}}">
                             <div class="card orange" ng-class="{ 'lighten-3':!candidate[anchor+'Details']}">
                             <div class="card-content white-text">
-                                <span class="card-title">{{anchor | uppercase}} DETAILS</span>
+                                <span class="card-title"><span ng-if="anchor == 'authorization'">LETTER OF </span>{{anchor | uppercase}} 
+                                    <span ng-if="anchor !== 'authorization'">DETAILS</span>
+                                    </span>
                             </div>
                         </div>
                     </div>
-                </div>
 
                 <!-- section 3 -->
                 <h5 class="center">Letter of Authorization</h5>
@@ -68,7 +69,14 @@
                         </div>-->
                 </div>
 
-                <button class="btn navButton centerContent blue" ng-click="saveUserDetails()" ng-disabled="enableSubmit">Submit</button>
+                <div class="row">
+                    <div class="col s6 ">
+                        <button class="btn navButton centerContent blue right" ng-click="saveUserDetails()" ng-disabled="enableSubmit">Submit</button>
+                    </div>
+                    <div class="col s6 ">
+                        <button class="btn navButton centerContent blue left" ng-click="DownloadPDF()" ng-disabled="enableSubmit">Download PDF</button>
+                    </div>
+                </div>
         </form>
     </div>
 </div>

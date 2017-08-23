@@ -4,9 +4,10 @@
     $scope.candidate = cifService.candidate;
     $scope.enableSubmit = true;
 
-    if ($scope.candidate.personalDetails && $scope.candidate.employmentDetails && $scope.candidate.educationDetails &&
-        $scope.candidate.referenceDetails && $scope.candidate.emergencyDetails && $scope.candidate.address && $scope.candidate.additionalDetails
-        && $scope.candidate.letterAccepted) {
+     if ($scope.candidate.personalDetails && $scope.candidate.employmentDetails && $scope.candidate.educationDetails &&
+        $scope.candidate.referenceDetails && $scope.candidate.emergencyDetails  && $scope.candidate.address && $scope.candidate.letterAccepted) {
+        $scope.candidate.referenceDetails && $scope.candidate.emergencyDetails  && $scope.candidate.address && $scope.candidate.letterAccepted) {
+
         $scope.enableSubmit = false;
     }
 

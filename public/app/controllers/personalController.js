@@ -1,4 +1,4 @@
-﻿var personalController = candidateInformation.controller("personalController", ['$scope', 'cifService','$state', function ($scope, cifService,$state) {
+﻿var personalController = candidateInformation.controller("personalController", ['$scope', 'cifService','$state','CandidateService', function ($scope, cifService,$state,CandidateService) {
     $scope.candidate = {};
     angular.copy(cifService.candidate, $scope.candidate);
     $scope.hasChildren = false;
@@ -31,6 +31,7 @@
         }
         angular.element(function () {
             initializeDatepicker();
+            $('.tooltipped').tooltip({delay: 50});
         })
         
     }
@@ -61,5 +62,4 @@
             $scope.candidate.personalDetails.children.splice(index,1);
         }
     }
-
 }])
