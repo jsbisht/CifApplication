@@ -25,11 +25,11 @@ candidateInformation.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'app/views/personal.html',
             controller: 'personalController'
         }).
-        state('navigation', {
-            url: '/navigation',
-            templateUrl: 'app/views/navigation.html',
-            controller: 'navigationController'
-        }).
+        // state('navigation', {
+        //     url: '/navigation',
+        //     templateUrl: 'app/views/navigation.html',
+        //     controller: 'navigationController'
+        // }).
         state('employment', {
             url: '/employment',
             templateUrl: 'app/views/employment.html',
@@ -54,6 +54,11 @@ candidateInformation.config(function ($stateProvider, $urlRouterProvider) {
             url: '/summary',
             templateUrl: 'app/views/summary.html',
             controller: 'summaryController'
+        }).
+        state('authorization', {
+            url: '/letterOfAuth',
+            templateUrl: 'app/views/letterOfAuth.html',
+            controller: 'letterOfAuthController'
         })
 
 });

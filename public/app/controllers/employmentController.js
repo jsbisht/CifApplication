@@ -6,12 +6,11 @@
         $scope.candidate.employmentDetails.employers = [{}]
     }
     $scope.addEmployer = function () {
-        $scope.candidate.employmentDetails.push({});
+        $scope.candidate.employmentDetails.employers.push({});
         angular.element(function () {
             $('select').material_select();
             initializeDatepicker();
         })
-
     }
 
     $scope.submitForm = function () {
