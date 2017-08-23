@@ -86,3 +86,8 @@ table.summary  tr td, tr th
 {
     border:2px solid black;
 }
+
+#additionalTable td
+{
+    text-align:left !important;
+}

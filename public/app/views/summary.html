@@ -248,17 +248,19 @@
     <!-- content -->
 </div>
 <div class="row">
-    <table class="summary"><tr><td colspan="2">EMPPLOYMENT DETAILS</td></tr>
+    <table class="summary">
         <tr>
-            <td colspan="2">
-                *Ensure that you are descriptive wherever necessary – e.g. If your previous company is closed down, please do mention it. Location & Employee Code/ ID/ Number is mandatory. If your previous employer did not provide the Employee ID, please mention and state reasons for the same<br />
+            <td colspan="2"><h6>EMPPLOYMENT DETAILS</h6></td>
+        </tr>
+        <tr>
+            <td colspan="2">*Ensure that you are descriptive wherever necessary – e.g. If your previous company is closed down, please do mention it. Location & Employee Code/ ID/ Number is mandatory. If your previous employer did not provide the Employee ID, please mention and state reasons for the same<br />
 
-*Employment details should be of the company you are on payrolls of, not of a company you are deputed to on an assignment with. In case you are showing employments experience in a skill enabling or professional Training institute, the same should only be shown if you were on the payrolls of such an institute.
+                *Employment details should be of the company you are on payrolls of, not of a company you are deputed to on an assignment with. In case you are showing employments experience in a skill enabling or professional Training institute, the same should only be shown if you were on the payrolls of such an institute.
             </td>
         </tr>
     </table>
     <div ng-repeat="employer in candidate.employmentDetails.employers">
-        <table class="summary" >
+        <table class="summary">
             <tbody>
                 <tr>
                     <td colspan="2">Employer {{$index + 1}}</td>
@@ -346,15 +348,15 @@
 </div>
 
 <table class="summary" ng-if="candidate.employmentDetails.employmentBreakFrom || candidate.employmentDetails.employmentStudiesBreakFrom">
-    <tbody >
+    <tbody>
         <tr ng-if="candidate.employmentDetails.employmentBreakFrom">
             <td colspan="3">Break in employment (if any)</td>
         </tr>
         <tr ng-if="candidate.employmentDetails.employmentBreakFrom">
             <td>Break From</td>
-            <td> Break To</td>
+            <td>Break To</td>
             <td>Reason For Break</td>
-        </tr ng-if="candidate.employmentDetails.employmentBreakFrom">
+        </tr>
         <tr>
             <td>{{::candidate.employmentDetails.employmentBreakFrom}}</td>
             <td>{{::candidate.employmentDetails.employmentBreakTo}}</td>
@@ -367,16 +369,236 @@
         </tr>
         <tr ng-if="candidate.employmentDetails.employmentStudiesBreakFrom">
             <td>Break From</td>
-            <td> Break To</td>
+            <td>Break To</td>
             <td>Reason For Break</td>
-        </tr >
+        </tr>
         <tr ng-if="candidate.employmentDetails.employmentStudiesBreakFrom">
             <td>{{::candidate.employmentDetails.employmentStudiesBreakFrom}}</td>
             <td>{{::candidate.employmentDetails.employmentStudiesBreakTo}}</td>
             <td>{{::candidate.employmentDetails.reasonForEmploymentStudiesBreak}}</td>
         </tr>
+    </tbody>
+</table>
+<div>
+    <table class="summary">
+        <thead>
+            <tr>
+                <td colspan="2"><h6>REFERENCE DETAILS</h6></td>
+            </tr>
+        </thead>
+        <tbody ng-repeat="reference in candidate.referenceDetails">
+            <tr>
+                <td colspan="2">
+                    <h6>Reference {{$index +1}}</h6>
+                </td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>{{::reference.name}}</td>
+            </tr>
+            <tr>
+                <td>Designation</td>
+                <td>{{::reference.designation}}</td>
+            </tr>
+            <tr>
+                <td>Organization Name</td>
+                <td>{{::reference.organization}}</td>
+            </tr>
+            <tr>
+                <td>Contact No.</td>
+                <td>{{::reference.contact}}</td>
+            </tr>
+            <tr>
+                <td>Email ID</td>
+                <td>{{::reference.email}}</td>
+            </tr>
+            <tr>
+                <td>Period of Acquaintance (ex. Sepr 08 - Jul 09)</td>
+                <td>{{::reference.periodOfAcquaintance}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
+<div style="page-break-after: always;">
+    <!-- content -->
+</div>
+
+<table class="summary">
+    <thead><tr><td colspan="2"><h6>EMERGENCY DETAILS</h6></td></tr></thead>
+    <tbody>
+        <tr>
+            <td>Blood Group</td>
+            <td>{{::candidate.emergencyDetails.bloodGroup}}</td>
+        </tr>
+        <tr>
+            <td>Allergic To</td>
+            <td>{{::candidate.emergencyDetails.allergicTo}}</td>
+        </tr>
+        <tr>
+            <td>Blood Pressure</td>
+            <td>{{::candidate.emergencyDetails.bloodPressure}}</td>
+        </tr>
+        <tr>
+            <td>Sugar</td>
+            <td>{{::candidate.emergencyDetails.sugar}}</td>
+        </tr>
+        <tr>
+            <td>Eye Sight</td>
+            <td>{{::candidate.emergencyDetails.eyeSight}}</td>
+        </tr>
+        <tr>
+            <td>Any Major Illness</td>
+            <td>{{::candidate.emergencyDetails.anyMajorIllness}}</td>
+        </tr>
+        <tr>
+            <td>Contact Person in Emergency</td>
+            <td>{{::candidate.emergencyDetails.emergencyContactPerson}}</td>
+        </tr>
+        <tr>
+            <td>Emergency Contact Address</td>
+            <td>{{::candidate.emergencyDetails.emergencyContactAddress}}</td>
+        </tr>
+        <tr>
+            <td>Emergency Contact Number</td>
+            <td>{{::candidate.emergencyDetails.emergencyContactNumber}}</td>
+        </tr>
     </tbody>
 </table>
 
-
+<div style="page-break-after: always;">
+    <!-- content -->
+</div>
+<table class="summary" id="additionalTable">
+    <thead><tr><td colspan="2"><h6>ADDITIONAL DETAILS</h6></td></tr></thead>
+    <tbody>
+        <tr>
+           <td colspan="2">Physical Disablities, If Any</td> 
+        </tr>
+        <tr>
+            <td colspan="2">{{::candidate.additionalDetails.disablilities}}</td>
+        </tr>
+        <tr>
+           <td colspan="2">Have you been involved in Court Proceeding (If yes, please provide details on a seperate sheet of paper)</td> 
+        </tr>
+        <tr>
+            <td colspan="2">{{::candidate.additionalDetails.courtProceedings}}</td>
+        </tr>
+        <tr>
+           <td colspan="2">Physical Disablities, If Any</td> 
+        </tr>
+        <tr>
+            <td colspan="2">{{::candidate.additionalDetails.disablilities}}</td>
+        </tr>
+        <tr>
+           <td colspan="2">PPreviously have you ever been interviewed in Prowareness? If yes, please provide details</td> 
+        </tr>
+        <tr>
+            <td colspan="2">Interviewed On: {{::candidate.additionalDetails.interviedOn}}, Outcome: {{::candidate.additionalDetails.interviedOutcome}}</td>
+        </tr>
+        <tr>
+           <td colspan="2">Your Hobbies</td> 
+        </tr>
+        <tr>
+            <td colspan="2">{{::candidate.additionalDetails.hobbies}}</td>
+        </tr>
+        <tr>
+           <td colspan="2">Your Interests</td> 
+        </tr>
+        <tr>
+            <td colspan="2">{{::candidate.additionalDetails.interests}}</td>
+        </tr>
+        <tr>
+           <td colspan="2">Your Goal / Aim in life</td> 
+        </tr>
+        <tr>
+            <td colspan="2">{{::candidate.additionalDetails.goalsInLife}}</td>
+        </tr>
+        <tr>
+           <td colspan="2">Prinicipals / ideals which have guided you in life</td> 
+        </tr>
+        <tr>
+            <td colspan="2">{{::candidate.additionalDetails.lifePrincipals}}</td>
+        </tr>
+        <tr>
+            <td><h6>Strengths</h6></td>
+            <td><h6>Weakness</h6></td>
+        </tr>
+         <tr>
+            <td>
+                <ol>
+                    <li ng-repeat="strength in candidate.additionalDetails.strengths">
+                        {{strength}}
+                    </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                    <li ng-repeat="weakness in candidate.additionalDetails.weekness">
+                        {{weakness}}
+                    </li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                Are you willing to Travel in India
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                {{::candidate.additionalDetails.willTravelInIndia}}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                Are you willing to Travel Abroad
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                {{::candidate.additionalDetails.willTravelAbroad}}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">State restrications/problems if any for travel</td>
+        </tr>
+        <tr>
+            <td colspan="2">{{::candidate.additionalDetails.travelStateRestrictions}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                Are you related to any of the employees? If yes please refer the name
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                {{::candidate.additionalDetails.knownEmployees}}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">Publication if any (list with specimen copy)</td>
+        </tr>
+        <tr>
+            <td colspan="2">{{::candidate.additionalDetails.publications}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">Any specialized Training Program attended</td>
+        </tr>
+        <tr>
+            <td colspan="2">{{::candidate.additionalDetails.trainingAttended}}</td>
+        </tr>
+          <tr>
+            <td colspan="2">Would you like to attend any specific training</td>
+        </tr>
+        <tr>
+            <td colspan="2">{{::candidate.additionalDetails.interestedInTrainings}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">Any other information/Suggestion</td>
+        </tr>
+        <tr>
+            <td colspan="2">{{::candidate.additionalDetails.suggestions}}</td>
+        </tr>
+    </tbody>
+</table>
