@@ -8,7 +8,7 @@ var dbObj = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "pro@321",
- database: "cif_test"
+  database: "cif_test_db"
 });
 
 dbObj.connect(function (err) {
