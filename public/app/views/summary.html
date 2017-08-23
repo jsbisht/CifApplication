@@ -1,186 +1,382 @@
 ﻿<div class="row ">
     <label class="btn blue" ng-click="exportAsPdf()">Download PDF</label>
 </div>
-<table id="summaryTable" >
-        <tbody>
-            <tr>
-                <td colspan="4"><h6>PERSONAL DETAILS</h6></td>
-            </tr>
-            <tr>
-                <td colspan="4"  class="red-text">*Please expand initials in your name-- As the same would be used in our Employment records</td>
-            </tr>
-            <tr>
-                <td>Title(Mr./Ms.)</td>
-                <td>First Name</td>
-                <td>Middle Name</td>
-                <td>Last Name</td>
-            </tr>
-            <tr>
-                <td>{{::candidate.personalDetails.title}}</td>
-                <td>{{::candidate.personalDetails.firstName}}</td>
-                <td>{{::candidate.personalDetails.middleName}}</td>
-                <td>{{::candidate.personalDetails.lastname}}</td>
-            </tr>
-            <tr>
-                <td>Gender</td>
-                <td>Date Of Borth</td>
-                <td colspan="2">Place Of Birth</td>
-            </tr>
-            <tr>
-                <td>{{::candidate.personalDetails.gender}}</td>
-                <td>{{::candidate.personalDetails.dateOfBirth}}</td>
-                <td colspan="2">{{::candidate.personalDetails.placeOfBirth}}</td>
-            </tr>
-            <tr>
-                <td>Mobile Number</td>
-                <td>Alternate Number</td>
-                <td colspan="2">Personal Email</td>
-            </tr>
-            <tr>
-                <td>{{::candidate.personalDetails.mobileNumber}}</td>
-                <td>{{::candidate.personalDetails.alertnateNumber}}</td>
-                <td colspan="2">{{::candidate.personalDetails.personalEmail}}</td>
-            </tr>
-            <tr><td colspan="4"><h6>ID Details</h6></td></tr>
-            <tr>
-                <td>Nationality</td>
-                <td>Passport Number</td>
-                <td>PAN</td>
-                <td>NSR ITPIN</td>
-            </tr>
-            <tr>
-                <td>{{::candidate.personalDetails.nationality}}</td>
-                <td>{{::candidate.personalDetails.passportNumber}}</td>
-                <td>{{::candidate.personalDetails.pan}}</td>
-                <td>{{::candidate.personalDetails.nsr}}</td>
-            </tr>
+<table id="summaryTable" class="summary">
+    <tbody>
+        <tr>
+            <td colspan="4">
+                <h6>PERSONAL DETAILS</h6>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" class="red-text">*Please expand initials in your name-- As the same would be used in our Employment records</td>
+        </tr>
+        <tr>
+            <td>Title(Mr./Ms.)</td>
+            <td>First Name</td>
+            <td>Middle Name</td>
+            <td>Last Name</td>
+        </tr>
+        <tr>
+            <td>{{::candidate.personalDetails.title}}</td>
+            <td>{{::candidate.personalDetails.firstName}}</td>
+            <td>{{::candidate.personalDetails.middleName}}</td>
+            <td>{{::candidate.personalDetails.lastname}}</td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>Date Of Borth</td>
+            <td colspan="2">Place Of Birth</td>
+        </tr>
+        <tr>
+            <td>{{::candidate.personalDetails.gender}}</td>
+            <td>{{::candidate.personalDetails.dateOfBirth}}</td>
+            <td colspan="2">{{::candidate.personalDetails.placeOfBirth}}</td>
+        </tr>
+        <tr>
+            <td>Mobile Number</td>
+            <td>Alternate Number</td>
+            <td colspan="2">Personal Email</td>
+        </tr>
+        <tr>
+            <td>{{::candidate.personalDetails.mobileNumber}}</td>
+            <td>{{::candidate.personalDetails.alertnateNumber}}</td>
+            <td colspan="2">{{::candidate.personalDetails.personalEmail}}</td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <h6>ID Details</h6>
+            </td>
+        </tr>
+        <tr>
+            <td>Nationality</td>
+            <td>Passport Number</td>
+            <td>PAN</td>
+            <td>NSR ITPIN</td>
+        </tr>
+        <tr>
+            <td>{{::candidate.personalDetails.nationality}}</td>
+            <td>{{::candidate.personalDetails.passportNumber}}</td>
+            <td>{{::candidate.personalDetails.pan}}</td>
+            <td>{{::candidate.personalDetails.nsr}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">Fathers Name & DOB</td>
+            <td colspan="2">{{::candidate.personalDetails.fathersName}} {{::candidate.personalDetails.fathersDOB}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">Mothers Name & DOB</td>
+            <td colspan="2">{{::candidate.personalDetails.mothersName}} {{::candidate.personalDetails.mothersDOB}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">Spouse Name & DOB</td>
+            <td colspan="2">{{::candidate.personalDetails.spouseName}} {{::candidate.personalDetails.spouseDOB}}</td>
+        </tr>
+        <tr ng-repeat="child in candidate.personalDetails.children">
+            <td colspan="2">Child {{$index + 1}} Name & DOB </td>
+            <td colspan="2">{{::child.name}} {{::child.DOB}}</td>
+
+        </tr>
+    </tbody>
+</table>
+
+<div style="page-break-after: always;">
+    <!-- content -->
+</div>
+
+<table class="summary">
+    <tbody>
+        <tr>
+            <td colspan="4">
+                <h6>ADDRESS DETAILS</h6>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <h6>Current Residing Addtres (In Detail)</h6>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">{{::candidate.addressDetails.current.addressLine1}}</td>
+        </tr>
+        <tr>
+            <td colspan="4">{{::candidate.addressDetails.current.addressLine2}}</td>
+        </tr>
+        <tr>
+            <td colspan="4">{{::candidate.addressDetails.current.addressLine3}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">{{::candidate.addressDetails.current.addressLine4}}</td>
+            <td>City:</td>
+            <td>{{::candidate.addressDetails.current.cityName}}</td>
+        </tr>
+        <tr>
+            <td>State:</td>
+            <td>{{::candidate.addressDetails.current.stateName}}</td>
+            <td>Landmark</td>
+            <td>{{::candidate.addressDetails.current.landmark}}</td>
+        </tr>
+        <tr>
+            <td>Duration of stay:</td>
+            <td>{{::candidate.addressDetails.current.durationOfStay}}</td>
+            <td>Pin:</td>
+            <td>{{::candidate.addressDetails.current.pinCode}}</td>
+
+        </tr>
+        <tr>
+            <td colspan="2">Contact:</td>
+            <td colspan="2">{{::candidate.addressDetails.current.telephone}}</td>
+        </tr>
 
 
-            <tr>
-                <td>Nationality</td>
-                <td>Passport Number</td>
-                <td>PAN</td>
-                <td>NSR ITPIN</td>
-            </tr>
-            <tr>
-                <td>{{::candidate.personalDetails.nationality}}</td>
-                <td>{{::candidate.personalDetails.passportNumber}}</td>
-                <td>{{::candidate.personalDetails.pan}}</td>
-                <td>{{::candidate.personalDetails.nsr}}</td>
-            </tr>
-            <tr>
-                <td>Nationality</td>
-                <td>Passport Number</td>
-                <td>PAN</td>
-                <td>NSR ITPIN</td>
-            </tr>
-            <tr>
-                <td>{{::candidate.personalDetails.nationality}}</td>
-                <td>{{::candidate.personalDetails.passportNumber}}</td>
-                <td>{{::candidate.personalDetails.pan}}</td>
-                <td>{{::candidate.personalDetails.nsr}}</td>
-            </tr>
-            <tr>
-                <td>Nationality</td>
-                <td>Passport Number</td>
-                <td>PAN</td>
-                <td>NSR ITPIN</td>
-            </tr>
-            <tr>
-                <td>{{::candidate.personalDetails.nationality}}</td>
-                <td>{{::candidate.personalDetails.passportNumber}}</td>
-                <td>{{::candidate.personalDetails.pan}}</td>
-                <td>{{::candidate.personalDetails.nsr}}</td>
-            </tr>
-            <tr>
-                <td>Nationality</td>
-                <td>Passport Number</td>
-                <td>PAN</td>
-                <td>NSR ITPIN</td>
-            </tr>
-            <tr>
-                <td>{{::candidate.personalDetails.nationality}}</td>
-                <td>{{::candidate.personalDetails.passportNumber}}</td>
-                <td>{{::candidate.personalDetails.pan}}</td>
-                <td>{{::candidate.personalDetails.nsr}}</td>
-            </tr>
-            <tr>
-                <td>Nationality</td>
-                <td>Passport Number</td>
-                <td>PAN</td>
-                <td>NSR ITPIN</td>
-            </tr>
-            <tr>
-                <td>{{::candidate.personalDetails.nationality}}</td>
-                <td>{{::candidate.personalDetails.passportNumber}}</td>
-                <td>{{::candidate.personalDetails.pan}}</td>
-                <td>{{::candidate.personalDetails.nsr}}</td>
-            </tr>
-            <tr>
-                <td>Nationality</td>
-                <td>Passport Number</td>
-                <td>PAN</td>
-                <td>NSR ITPIN</td>
-            </tr>
-            <tr>
-                <td>{{::candidate.personalDetails.nationality}}</td>
-                <td>{{::candidate.personalDetails.passportNumber}}</td>
-                <td>{{::candidate.personalDetails.pan}}</td>
-                <td>{{::candidate.personalDetails.nsr}}</td>
-            </tr>
-            <tr>
-                <td>Nationality</td>
-                <td>Passport Number</td>
-                <td>PAN</td>
-                <td>NSR ITPIN</td>
-            </tr>
-            <tr>
-                <td>{{::candidate.personalDetails.nationality}}</td>
-                <td>{{::candidate.personalDetails.passportNumber}}</td>
-                <td>{{::candidate.personalDetails.pan}}</td>
-                <td>{{::candidate.personalDetails.nsr}}</td>
-            </tr>
-            <tr>
-                <td>Nationality</td>
-                <td>Passport Number</td>
-                <td>PAN</td>
-                <td>NSR ITPIN</td>
-            </tr>
-            <tr>
-                <td>{{::candidate.personalDetails.nationality}}</td>
-                <td>{{::candidate.personalDetails.passportNumber}}</td>
-                <td>{{::candidate.personalDetails.pan}}</td>
-                <td>{{::candidate.personalDetails.nsr}}</td>
-            </tr>
-            <tr>
-                <td>Nationality</td>
-                <td>Passport Number</td>
-                <td>PAN</td>
-                <td>NSR ITPIN</td>
-            </tr>
-            <tr>
-                <td>{{::candidate.personalDetails.nationality}}</td>
-                <td>{{::candidate.personalDetails.passportNumber}}</td>
-                <td>{{::candidate.personalDetails.pan}}</td>
-                <td>{{::candidate.personalDetails.nsr}}</td>
-            </tr>
-            <tr>
-                <td colspan="2">Fathers Name & DOB</td>
-                <td colspan="2">{{::candidate.personalDetails.fathersName}} {{::candidate.personalDetails.fathersDOB}}</td>
-            </tr>
-            <tr>
-                <td colspan="2">Mothers Name & DOB</td>
-                <td colspan="2">{{::candidate.personalDetails.mothersName}} {{::candidate.personalDetails.mothersDOB}}</td>
-            </tr>
-            <tr>
-                <td colspan="2" >Spouse Name & DOB</td>
-                <td colspan="2">{{::candidate.personalDetails.spouseName}} {{::candidate.personalDetails.spouseDOB}}</td>
-            </tr>
-            <tr ng-repeat="child in candidate.personalDetails.children">
-                <td colspan="2" >Child {{$index + 1}} Name & DOB </td>
-                <td colspan="2">{{::child.name}} {{::child.DOB}}</td>
-      
-            </tr>
-        </tbody>
-    </table> 
+        <tr>
+            <td colspan="4">
+                <h6>Permanent/Native Address (In Detail)</h6>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">{{::candidate.addressDetails.permanent.addressLine1}}</td>
+        </tr>
+        <tr>
+            <td colspan="4">{{::candidate.addressDetails.permanent.addressLine2}}</td>
+        </tr>
+        <tr>
+            <td colspan="4">{{::candidate.addressDetails.permanent.addressLine3}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">{{::candidate.addressDetails.permanent.addressLine4}}</td>
+            <td>City:</td>
+            <td>{{::candidate.addressDetails.permanent.cityName}}</td>
+        </tr>
+        <tr>
+            <td>State:</td>
+            <td>{{::candidate.addressDetails.permanent.stateName}}</td>
+            <td>Landmark:</td>
+            <td>{{::candidate.addressDetails.permanent.landmark}}</td>
+        </tr>
+        <tr>
+            <td>Duration of stay:</td>
+            <td>{{::candidate.addressDetails.permanent.durationOfStay}}</td>
+            <td>Pin:</td>
+            <td>{{::candidate.addressDetails.permanent.pinCode}}</td>
+
+        </tr>
+        <tr>
+            <td colspan="2">Contact:</td>
+            <td colspan="2">{{::candidate.addressDetails.permanent.telephone}}</td>
+        </tr>
+
+    </tbody>
+</table>
+
+<div style="page-break-after: always;">
+    <!-- content -->
+</div>
+<table class="summary">
+    <thead>
+        <tr>
+            <td colspan="7">
+                <h6>EDUCATION DETAILS</h6>
+            </td>
+        </tr>
+        <tr>
+            <th>Qualification
+            </th>
+            <th>Institute Name & City
+            </th>
+            <th>University/Board & City
+            </th>
+            <th>Student ID/Reg No.
+            </th>
+            <th>Period (From-To)YYYY
+            </th>
+            <th>Year Of Passing
+            </th>
+            <th>% marks/CGPA
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>10th
+            </td>
+            <td>{{::candidate.educationDetails.tenth.schoolName}}</td>
+            <td>{{::candidate.educationDetails.tenth.board}}</td>
+            <td>{{::candidate.educationDetails.tenth.regNo}}</td>
+            <td>{{::candidate.educationDetails.tenth.duration}}</td>
+            <td>{{::candidate.educationDetails.tenth.yearOfPassing}}</td>
+            <td>{{::candidate.educationDetails.tenth.percentage}}</td>
+        </tr>
+        <tr>
+            <td>12th
+            </td>
+            <td>{{::candidate.educationDetails.twelth.schoolName}}</td>
+            <td>{{::candidate.educationDetails.twelth.board}}</td>
+            <td>{{::candidate.educationDetails.twelth.regNo}}</td>
+            <td>{{::candidate.educationDetails.twelth.duration}}</td>
+            <td>{{::candidate.educationDetails.twelth.yearOfPassing}}</td>
+            <td>{{::candidate.educationDetails.twelth.percentage}}</td>
+        </tr>
+        <tr>
+            <td>Graduation
+            </td>
+            <td>{{::candidate.educationDetails.graduation.college}}</td>
+            <td>{{::candidate.educationDetails.graduation.board}}</td>
+            <td>{{::candidate.educationDetails.graduation.regNo}}</td>
+            <td>{{::candidate.educationDetails.graduation.duration}}</td>
+            <td>{{::candidate.educationDetails.graduation.yearOfPassing}}</td>
+            <td>{{::candidate.educationDetails.graduation.percentage}}</td>
+        </tr>
+        <tr ng-if="candidate.educationDetails.postGraduation">
+            <td>Post Graduation
+            </td>
+            <td>{{::candidate.educationDetails.postGraduation.college}}</td>
+            <td>{{::candidate.educationDetails.postGraduation.board}}</td>
+            <td>{{::candidate.educationDetails.postGraduation.regNo}}</td>
+            <td>{{::candidate.educationDetails.postGraduation.duration}}</td>
+            <td>{{::candidate.educationDetails.postGraduation.yearOfPassing}}</td>
+            <td>{{::candidate.educationDetails.postGraduation.percentage}}</td>
+        </tr>
+        <tr ng-if="">
+            <td>Reason for Gap in education</td>
+            <td colspan="6">{{::candidate.educationDetails.eduGapReason}}</td>
+        </tr>
+
+    </tbody>
+</table>
+<div style="page-break-after: always;">
+    <!-- content -->
+</div>
+<div class="row">
+    <table class="summary"><tr><td colspan="2">EMPPLOYMENT DETAILS</td></tr>
+        <tr>
+            <td colspan="2">
+                *Ensure that you are descriptive wherever necessary – e.g. If your previous company is closed down, please do mention it. Location & Employee Code/ ID/ Number is mandatory. If your previous employer did not provide the Employee ID, please mention and state reasons for the same<br />
+
+*Employment details should be of the company you are on payrolls of, not of a company you are deputed to on an assignment with. In case you are showing employments experience in a skill enabling or professional Training institute, the same should only be shown if you were on the payrolls of such an institute.
+            </td>
+        </tr>
+    </table>
+    <div ng-repeat="employer in candidate.employmentDetails.employers">
+        <table class="summary" >
+            <tbody>
+                <tr>
+                    <td colspan="2">Employer {{$index + 1}}</td>
+                </tr>
+                <tr>
+                    <td>Organization Name:
+                    </td>
+                    <td>{{::employer.name}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address(Branch Name):
+                    </td>
+                    <td>{{::employer.address}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Employee ID:
+                    </td>
+                    <td>{{::employer.empID}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Type of Employment:
+                    </td>
+                    <td>{{::employer.employmentType}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Period of employment
+                    </td>
+                    <td>{{::employer.periodOfEmployment}} years (From:{{::employer.fromDate}} - To:{{::employer.toDate}})
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last Designation held
+                    </td>
+                    <td>{{::employer.designation}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last Drawn Salary
+                    </td>
+                    <td>{{::employer.lastSalary}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reporting Manager
+                    </td>
+                    <td>{{::employer.reportingManagersName}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reporting Manager Designation
+                    </td>
+                    <td>{{::employer.reportingManagersDesignation}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reporting Manager Contact
+                    </td>
+                    <td>{{::employer.reportingManagersContact}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reason For Leaving
+                    </td>
+                    <td>{{::employer.reasonForLeaving}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mode of Separation
+                    </td>
+                    <td>{{::employer.modeOfSeperation}} <span ng-if="employer.seperationModeOthers">{{::employer.seperationModeOthers}}</span>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+        <div style="page-break-after: always;">
+            <!-- content -->
+        </div>
+    </div>
+
+</div>
+
+<table class="summary" ng-if="candidate.employmentDetails.employmentBreakFrom || candidate.employmentDetails.employmentStudiesBreakFrom">
+    <tbody >
+        <tr ng-if="candidate.employmentDetails.employmentBreakFrom">
+            <td colspan="3">Break in employment (if any)</td>
+        </tr>
+        <tr ng-if="candidate.employmentDetails.employmentBreakFrom">
+            <td>Break From</td>
+            <td> Break To</td>
+            <td>Reason For Break</td>
+        </tr ng-if="candidate.employmentDetails.employmentBreakFrom">
+        <tr>
+            <td>{{::candidate.employmentDetails.employmentBreakFrom}}</td>
+            <td>{{::candidate.employmentDetails.employmentBreakTo}}</td>
+            <td>{{::candidate.employmentDetails.reasonForEmploymentBreak}}</td>
+        </tr>
+
+
+        <tr ng-if="candidate.employmentDetails.employmentStudiesBreakFrom">
+            <td colspan="3">Break between studies & employment (if any)</td>
+        </tr>
+        <tr ng-if="candidate.employmentDetails.employmentStudiesBreakFrom">
+            <td>Break From</td>
+            <td> Break To</td>
+            <td>Reason For Break</td>
+        </tr >
+        <tr ng-if="candidate.employmentDetails.employmentStudiesBreakFrom">
+            <td>{{::candidate.employmentDetails.employmentStudiesBreakFrom}}</td>
+            <td>{{::candidate.employmentDetails.employmentStudiesBreakTo}}</td>
+            <td>{{::candidate.employmentDetails.reasonForEmploymentStudiesBreak}}</td>
+        </tr>
+
+    </tbody>
+</table>
+
 

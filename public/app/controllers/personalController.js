@@ -1,12 +1,14 @@
 ﻿var personalController = candidateInformation.controller("personalController", ['$scope', 'cifService','$state', function ($scope, cifService,$state) {
     $scope.candidate = {};
     angular.copy(cifService.candidate, $scope.candidate);
-    if($scope.candidate.personalDetails==0){
+    $scope.hasChildren = false;
+    if (angular.isUndefined($scope.candidate.personalDetails)) {
         $scope.hasChildren = false;
+    } else if (!angular.isUndefined($scope.candidate.personalDetails.children) && $scope.candidate.personalDetails.children.length > 0) {
+        $scope.hasChildren = true;
     }
-    else $scope.hasChildren = true;
+    
 
-    //$scope.hasChildren = false;
     $scope.addChildren = function () {
        // debugger;
         if ($scope.hasChildren && angular.isUndefined($scope.candidate.personalDetails)) {

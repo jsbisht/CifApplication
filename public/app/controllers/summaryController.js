@@ -95,9 +95,7 @@
                 "yearOfPassing": "6568",
                 "percentage": "56"
             },
-            "personalDetails": {
                 "eduGapReason": "dfsgsdfgdfg"
-            }
         },
         "addressDetails": {
             "current": {
@@ -155,7 +153,7 @@
     }
 
     $scope.exportAsPdf = function () {
-        
+        window.print();
     }
 
  

@@ -3,7 +3,25 @@ const router = express.Router();
 const PDFDocument = require('pdfkit');
 const blobStream  = require('blob-stream');
 
-// Save profile details to DB
+router.get('/toPDF', function (req, res) {
+    var phantom = require('phantom');   
+    
+    phantom.create().then(function(ph) {
+        ph.createPage().then(function(page) {
+            page.open("http://www.google.com").then(function(status) {
+                page.render('google.pdf').then(function() {
+                    console.log('Page Rendered');
+                    ph.exit();
+                });
+                /*res.setHeader('Content-disposition', 'attachment; filename="test.pdf"');
+                res.setHeader('Content-type', 'application/pdf');
+                res.send(page);
+                ph.exit();*/
+            });
+        });
+    });
+})
+
 router.get('/getPDF', function (req, res) {
     res.setHeader('Content-disposition', 'attachment; filename="test.pdf"');
     res.setHeader('Content-type', 'application/pdf');
