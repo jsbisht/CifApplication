@@ -1,4 +1,4 @@
-function EducationDetails() {}
+function EducationDetails() { }
 
 EducationDetails.prototype.insert = function (req, res, dbObj, details, callback) {
     if (req.body.educationDetails.tenth != null && req.body.educationDetails.tenth != undefined) {
@@ -29,7 +29,6 @@ function insertIntoDB(req, res, dbObj, args, callback) {
 
         } else {
             console.log('Error while performing Query.' + err);
-            res.send('Error while performing Query.' + err);
         }
     });
 };
@@ -58,7 +57,7 @@ function prepareTwelthArgs(details, req) {
         BOARD: req.body.educationDetails.twelth.board,
         DURATION: req.body.educationDetails.twelth.duration,
         PASSING_YEAR: req.body.educationDetails.twelth.yearOfPassing,
-        PERCENTAGE: req.body.educationDetails.twelth.yearOfPassing,
+        PERCENTAGE: req.body.educationDetails.twelth.percentage,
     };
     return twelthArgs;
 }
@@ -71,7 +70,7 @@ function preparegraduationArgs(details, req) {
         BOARD: req.body.educationDetails.graduation.board,
         DURATION: req.body.educationDetails.graduation.duration,
         PASSING_YEAR: req.body.educationDetails.graduation.yearOfPassing,
-        PERCENTAGE: req.body.educationDetails.graduation.yearOfPassing,
+        PERCENTAGE: req.body.educationDetails.graduation.percentage,
     };
     return graduationArgs;
 }
@@ -80,11 +79,11 @@ function preparePostgraduationArgs(details, req) {
     var postGraduationArgs = {
         cid: details.cid,
         CLASSLEVEL: "postGraduation",
-        SCHOOL_NAME: req.body.educationDetails.postGraduation.college,
-        BOARD: req.body.educationDetails.postGraduation.board,
-        DURATION: req.body.educationDetails.postGraduation.duration,
-        PASSING_YEAR: req.body.educationDetails.postGraduation.yearOfPassing,
-        PERCENTAGE: req.body.educationDetails.postGraduation.yearOfPassing,
+        SCHOOL_NAME: req.body.educationDetails.postGraduation.college != null ? req.body.educationDetails.postGraduation.college : 'not available',
+        BOARD: req.body.educationDetails.postGraduation.board != null ? req.body.educationDetails.postGraduation.board : 'not available',
+        DURATION: req.body.educationDetails.postGraduation.duration != null ? req.body.educationDetails.postGraduation.duration : 'not available',
+        PASSING_YEAR: req.body.educationDetails.postGraduation.yearOfPassing != null ? req.body.educationDetails.postGraduation.yearOfPassing : 1900,
+        PERCENTAGE: req.body.educationDetails.postGraduation.percentage != null ? req.body.educationDetails.postGraduation.percentage : 'N/A',
     };
     return postGraduationArgs;
 }

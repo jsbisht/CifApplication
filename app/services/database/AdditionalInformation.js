@@ -11,7 +11,7 @@ AdditionalInformation.prototype.insert = function (req, res, dbObj, details, cal
         CID: details.cid,
         PHYSICAL_DISABILITIES: req.body.additionalDetails.disablilities,
         COURT_PROCEEDING_SUMMARY:req.body.additionalDetails.courtProceedings,
-        PROWARENESS_PREV_INTVW_DATE: DateUtils.stringToDate(req.body.additionalDetails.interviedOn, "dd-mm-yyyy", "-"),
+        PROWARENESS_PREV_INTVW_DATE: DateUtils.stringToDate(nullCheck(req.body.additionalDetails.interviedOn), "dd-mm-yyyy", "-"),
         PROWARENESS_PREV_INTVW_OUTCOME: req.body.additionalDetails.interviedOutcome,
         HOBBIES: req.body.additionalDetails.hobbies,
         INTERESTS: req.body.additionalDetails.interests,
@@ -39,6 +39,14 @@ AdditionalInformation.prototype.insert = function (req, res, dbObj, details, cal
     });
 
 
+}
+
+
+function nullCheck(strDate){
+    if(strDate != null && strDate != undefined){
+        return strDate;
+    }
+    else return '00-00-2100';
 }
 var additionalInformation = new AdditionalInformation();
 

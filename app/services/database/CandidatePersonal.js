@@ -4,11 +4,10 @@ CandidatePersonal.prototype.insert = function (req, res, dbObj, details, callbac
     console.log('Inserting personal details');
     // console.log(moment(req.body.personalDetails.placeOfBirth).format('DD-MM-YYYY'));
     console.log(stringToDate(req.body.personalDetails.dateOfBirth,"dd-mm-yyyy","-"));
-     var id = 8;
      var spouseDOB= null; 
      
      if(req.body.personalDetails.spouseDOB != null && req.body.personalDetails.spouseDOB != undefined ){
-        spouseDOB=  stringToDate(req.body.personalDetails.spouseDOB,"dd-mm-yyyy","-")
+        spouseDOB=  stringToDate(req.body.personalDetails.spouseDOB,"dd-mm-yyyy","-");
     }
 
      var args = {TITLE :req.body.personalDetails.title,
@@ -30,23 +29,21 @@ CandidatePersonal.prototype.insert = function (req, res, dbObj, details, callbac
         MOTHER_DOB: stringToDate(req.body.personalDetails.mothersDOB,"dd-mm-yyyy","-"),
         SPOUSE_NAME: req.body.personalDetails.spouseName,
         SPOUSE_DOB:spouseDOB,
+        GENDER:req.body.personalDetails.gender,
         CHILD_DETAILS :JSON.stringify(req.body.personalDetails.children),
+        
         CID:details.cid
      };
 
      
      var insQuery = 'insert into PERSONAL_DETAILS SET ?';
      var query = dbObj.query(insQuery, args, function (err, rows, fields) {
-        //  dbObj.end();
          if (!err) {
-            //  console.log('The solution is: ', rows, query);
-            //  res.send('personal details of ' + req.body.employeeName + ' Saved to DB  with Candidate id of ' +
-            //      req.body.cid);
+           
             callback();
          }
          else {
              console.log('Error while performing Query.' + err);
-            //  res.send('Error while performing Query.' + err);
          }
      });
 }

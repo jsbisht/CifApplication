@@ -35,11 +35,11 @@ EmployementDetails.prototype.insert = function (req, res, dbObj, details, callba
 
     var empBrkArgs = {
         CID: details.cid,
-        EMPLOYMENT_BREAK_FROM: DateUtils.stringToDate(req.body.employmentDetails.employmentBreakFrom, "dd-mm-yyyy", "-"),
-        EMPLOYMENT_BREAK_TO: DateUtils.stringToDate(req.body.employmentDetails.employmentBreakTo, "dd-mm-yyyy", "-"),
+        EMPLOYMENT_BREAK_FROM: DateUtils.stringToDate(nullCheck(req.body.employmentDetails.employmentBreakFrom), "dd-mm-yyyy", "-"),
+        EMPLOYMENT_BREAK_TO: DateUtils.stringToDate(nullCheck(req.body.employmentDetails.employmentBreakTo), "dd-mm-yyyy", "-"),
         EMPLOYMENT_BREAK_REASON: req.body.employmentDetails.reasonForEmploymentBreak,
-        STUDY_EMPLOYMENT_BREAK_FROM: DateUtils.stringToDate(req.body.employmentDetails.employmentStudiesBreakFrom, "dd-mm-yyyy", "-"),
-        STUDY_EMPLOYMENT_BREAK_TO: DateUtils.stringToDate(req.body.employmentDetails.employmentStudiesBreakTo, "dd-mm-yyyy", "-"),
+        STUDY_EMPLOYMENT_BREAK_FROM: DateUtils.stringToDate(nullCheck(req.body.employmentDetails.employmentStudiesBreakFrom), "dd-mm-yyyy", "-"),
+        STUDY_EMPLOYMENT_BREAK_TO: DateUtils.stringToDate(nullCheck(req.body.employmentDetails.employmentStudiesBreakTo), "dd-mm-yyyy", "-"),
         STUDY_EMPLOYMENT_BREAK_REASON: req.body.employmentDetails.reasonForEmploymentStudiesBreak
     };
 
@@ -52,6 +52,13 @@ EmployementDetails.prototype.insert = function (req, res, dbObj, details, callba
             console.log('Error while performing Query.' + err);
         }
     });
+}
+
+function nullCheck(strDate){
+    if(strDate != null && strDate != undefined){
+        return strDate;
+    }
+    else return '00-00-2100';
 }
 var employementDetails = new EmployementDetails();
 

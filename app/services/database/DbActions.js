@@ -46,21 +46,22 @@ DbActions.prototype.insertAll = function(req, res, dbObj) {
                     AdditionalInformation.insert(req, res, dbObj, details, completed);
                 }
             ], function(err, results) {
-                console.log("details could not inserted to  database for candidate : " + err);
-                res.send("details could not inserted to  database for candidate : " + req.body.employeeName)
-                callback();
+                if(err){
+                    console.log("details could not inserted to  database for candidate : " + err);
+                }
+                else{
+                    callback();
+                }
             });
         },
         function(callback) { 
-            res.send("All details inserted");
             dbObj.end();
-            res.send("details are inserted inside database for candidate : " + req.body.employeeName)
+            res.setHeader('content-type','application/json');
+            res.send(details);
             callback();
         }
-        
+       
     ]);
-    ;
-    
     console.log('Inserted all items');
     
 }

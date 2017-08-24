@@ -29,10 +29,6 @@ var insArgs = {
 }
 
 
-
-
-
-
 var emergencyDetails = new EmergencyDetails();
 
 module.exports = emergencyDetails;
