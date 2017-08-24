@@ -39,7 +39,7 @@ Candidate.prototype.fetchById = function (req, res, dbObj) {
   var args = {
     cid: req.query.cid
   }
-  var result = dbObj.query('SELECT * FROM candidate where EMPLOYEEID = ' + req.params.cid,
+  var result = dbObj.query('SELECT * FROM candidate where CID = ' + req.params.cid,
     function (err, rows, fields) {
       if (!err) {
         console.log(' req.query.cid ', req.params.cid);
