@@ -5,7 +5,11 @@ CandidatePersonal.prototype.insert = function (req, res, dbObj, details, callbac
     // console.log(moment(req.body.personalDetails.placeOfBirth).format('DD-MM-YYYY'));
     console.log(stringToDate(req.body.personalDetails.dateOfBirth,"dd-mm-yyyy","-"));
      var id = 8;
+     var spouseDOB= null; 
      
+     if(req.body.personalDetails.spouseDOB != null && req.body.personalDetails.spouseDOB != undefined ){
+        spouseDOB=  stringToDate(req.body.personalDetails.spouseDOB,"dd-mm-yyyy","-")
+    }
 
      var args = {TITLE :req.body.personalDetails.title,
         FIRSTNAME:req.body.personalDetails.firstName,
@@ -25,7 +29,7 @@ CandidatePersonal.prototype.insert = function (req, res, dbObj, details, callbac
         MOTHER_NAME:req.body.personalDetails.mothersName,
         MOTHER_DOB: stringToDate(req.body.personalDetails.mothersDOB,"dd-mm-yyyy","-"),
         SPOUSE_NAME: req.body.personalDetails.spouseName,
-        SPOUSE_DOB:stringToDate(req.body.personalDetails.spouseDOB,"dd-mm-yyyy","-"),
+        SPOUSE_DOB:spouseDOB,
         CHILD_DETAILS :JSON.stringify(req.body.personalDetails.children),
         CID:details.cid
      };
