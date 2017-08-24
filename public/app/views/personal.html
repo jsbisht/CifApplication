@@ -10,7 +10,7 @@
             <div class="col s12 row">
                 <div class="col s12 m4 l4">
                     <div class="input-field col s4">
-                        <select ng-model="candidate.personalDetails.title" required>
+                        <select ng-model="candidate.personalDetails.title" id="title" required>
                             <option value="" disabled selected>Title <label class="redText" style="color:red">*</label></option>
                             <option value="Mr.">Mr.</option>
                             <option value="Ms.">Ms.</option>
@@ -37,7 +37,7 @@
             </div>
             <div class=" col s12 row">
                 <div class="input-field col s12 m4">
-                    <select ng-model="candidate.personalDetails.gender" required>
+                    <select ng-model="candidate.personalDetails.gender" id="gender" required>
                         <option value="" disabled selected>Gender <span class="redText">*</span></option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>

@@ -51,7 +51,7 @@ candidateInformation.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'referenceController'
         }).
         state('summary', {
-            url: '/summary',
+            url: '/summary?cid',
             templateUrl: 'app/views/summary.html',
             controller: 'summaryController'
         }).
@@ -73,9 +73,17 @@ candidateInformation.run(function (cifService) {
 })
 
 candidateInformation.service('cifService', function ($http) {
-    //this.candidate = {};
+    // DETAILS
+    this.candidate = {};
     this.saveDetails = function () {
-        return $http.post('/db/save', this.candidate);
-            
+        return $http.post('/db/save', this.candidate);    
+    }
+    this.getDetails = function(cid) {
+        return $http.get('/db/get/' + cid);
+    }
+
+    // PDF
+    this.getPDF = function(cid) {
+        return $http.get('/api/getPDF?cid=' + cid);
     }
 })

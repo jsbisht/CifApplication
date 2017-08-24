@@ -4,7 +4,9 @@
     $scope.candidate = cifService.candidate;
     $scope.enableSubmit = true;
 
-     if ($scope.candidate.personalDetails && $scope.candidate.employmentDetails && $scope.candidate.educationDetails &&
+    var cid = null;
+
+    if ($scope.candidate.personalDetails && $scope.candidate.employmentDetails && $scope.candidate.educationDetails &&
         $scope.candidate.referenceDetails && $scope.candidate.emergencyDetails  && $scope.candidate.addressDetails && $scope.candidate.letterAccepted) {
         $scope.enableSubmit = false;
     }
@@ -13,6 +15,7 @@
         if (window.confirm("Details once save can not be modified. Are you sure you want to submit?")) {
             //save the user details to database
             cifService.saveDetails().then(function (response) {
+                cid = response.cid;
                 // do something with the response
                 //$state.go("summary");
                 localStorage.removeItem("cifFormData");
@@ -24,5 +27,9 @@
         } else {
             return false;
         }
-    }
+    };
+
+    $scope.downloadPDF = function() {
+        cifService.getPDF(cid);
+    };
 }]);

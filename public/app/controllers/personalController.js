@@ -54,6 +54,15 @@
     }
     angular.element(function () {
         $('select').material_select();
+        angular.copy(cifService.candidate, $scope.candidate);
+        if($scope.candidate.personalDetails){
+            if($scope.candidate.personalDetails.title){
+                $("#title").val($scope.candidate.personalDetails.title);
+            }
+            if($scope.candidate.personalDetails.gender){
+                $("#title").val($scope.candidate.personalDetails.gender);
+            }
+        }
         initializeDatepicker(); 
     });
 

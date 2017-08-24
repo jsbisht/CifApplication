@@ -7,6 +7,8 @@ var http = require('http');
 var fs = require('fs');
 
 router.get('/toPDF', function (req, res) {
+    var cid = req.params.cid;
+
     var download = function (url, dest, cb) {
         var file = path.resolve(__dirname + '/../..') + '/Cif_Form.pdf';
         
@@ -26,7 +28,7 @@ router.get('/toPDF', function (req, res) {
             //page.property('viewportSize', { width: 1024, height: 768 });
             page.property('paperSize', { format: 'A4', orientation: 'portrait' });
             //page.property('zoomFactor', 1);
-            page.open("http://localhost:3000/#!/summary").then(function (status) {
+            page.open("http://localhost:3000/#!/summary?cid=" + cid).then(function (status) {
                 page.render('Cif_Form.pdf').then(function() {
                     download('http://localhost:3000/Cif_Form.pdf', 'localhost:3000/api/toPDF', function () {
                         ph.exit();
