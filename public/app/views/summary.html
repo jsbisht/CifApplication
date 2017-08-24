@@ -595,7 +595,7 @@
 <div>
 
     <p style="margin-bottom:1.5em;">
-        <input type="checkbox" class="filled-in" id="agrreAuthorization" ng-model="candidate.letterAccepted" disabled/> <label>I agree to provide copies of mark sheets and relevant certificates. I understand that employment
+        <input type="checkbox" class="filled-in" id="agrreAuthorization" ng-model="candidate.letterOfAuth.letterAccepted" disabled/> <label>I agree to provide copies of mark sheets and relevant certificates. I understand that employment
                                         with Prowareness, is governed by Prowareness, Employment Policies as applicable, including
                                         satisfactory information from a background check.</label> </p>
                     
@@ -618,5 +618,8 @@
                                         above.
        
     </p>
+    <label>Name: {{candidate.letterOfAuth.empName}}</label><br>
+    <label>Name: {{candidate.letterOfAuth.authDate}}</label>
+    
    
 </div>

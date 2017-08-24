@@ -79,7 +79,7 @@ candidateInformation.service('cifService', function ($http) {
         return $http.post('/db/save', this.candidate);    
     }
     this.getDetails = function(cid) {
-        return $http.get('/db/get/' + cid);
+        return $http.get('/db/details/' + cid);
     }
 
     // PDF
